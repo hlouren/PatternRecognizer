@@ -78,6 +78,10 @@ public partial class Program {
         // - parser.txt: detailed information about the generated parser and its execution on the input native model
         // - log.txt: additional information about the virtualization process
 
+        var outputDirectory = GetOutputDirectory();
+        if (!Directory.Exists(outputDirectory)) {
+            Directory.CreateDirectory(outputDirectory);
+        }
         using var logFile = new StreamWriter(GetFileFullPath("log.txt"));
         using var writer = new IndentedTextWriter(logFile);
 
