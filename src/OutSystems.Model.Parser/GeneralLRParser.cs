@@ -23,9 +23,11 @@ public partial class GeneralLRParser<TTerminal, TResult, TContext> where TTermin
     }
 
     public TResult? Parse(IEnumerable<TTerminal> tokens, TContext context, CancellationToken cancellationToken) {
-        logger.WriteLine();
-        logger.WriteLine("Starting parser on token sequence:");
-        logger.WriteLine(string.Join(" ", tokens));
+        if (logger != null) {
+            logger.WriteLine();
+            logger.WriteLine("Starting parser on token sequence:");
+            logger.WriteLine(string.Join(" ", tokens.Take(100)));
+        }
 
         var tokenStream = new LazyList<TTerminal>(tokens);
 
