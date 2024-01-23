@@ -1,0 +1,46 @@
+Pattern LabelWithFallback.1! : LabelWithFallback
+    LabelWidget
+
+Pattern LabelWithFallback.2! : LabelWithFallback
+    VirtualWidget
+
+Pattern Label.1 : LabelWidget
+    ITextWidget
+
+Pattern VirtualWidget.1! : VirtualWidget
+    NativeWidget
+
+Pattern Expr.1 : VirtualWidget
+    IExpressionWidget
+
+Pattern Expr.2 : VirtualWidget
+    ITextWidget
+    IExpressionWidget
+
+Pattern Table.1 : VirtualWidget
+    ITableWidget
+    |   HeaderRow
+    |   |   CHeader=IHeaderCellWidget*
+    |   |   |   Content
+    |   |   |   |   LabelWithFallback*
+    |   DataRow
+    |   |   CData=IDataCellWidget*
+    |   |   |   Content
+    |   |   |   |   VirtualWidget*
+
+Pattern Native.Text : NativeWidget
+    ITextWidget
+
+Pattern Native.Icon : NativeWidget
+    IIconWidget
+
+Pattern Native.Table : NativeWidget
+    ITableWidget
+    |   HeaderRow
+    |   |   IHeaderCellWidget*
+    |   |   |   Content
+    |   |   |   |   VirtualWidget*
+    |   DataRow
+    |   |   IDataCellWidget*
+    |   |   |   Content
+    |   |   |   |   VirtualWidget*

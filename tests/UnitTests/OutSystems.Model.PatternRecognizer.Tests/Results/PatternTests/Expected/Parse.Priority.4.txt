@@ -1,0 +1,11 @@
+Table.1
+    NativeWidgets: { <TableWidget> <HeaderRow> <HeaderCellWidget> <Content>  </Content> </HeaderCellWidget> </HeaderRow> <DataRow> <DataCellWidget> <Content> <ExpressionWidget Value= /> </Content> </DataCellWidget> </DataRow> </TableWidget> }
+    Captures:
+        CHeader -> [ <HeaderCellWidget> <Content>  </Content> </HeaderCellWidget>, [  ] ]
+        CData -> [ <DataCellWidget> <Content> <ExpressionWidget Value= /> </Content> </DataCellWidget>, [ Expr.1 ] ]
+    Children:
+        Group
+            NativeWidgets: {  }
+            Children:
+                Expr.1
+                    NativeWidgets: { <ExpressionWidget Value= /> }

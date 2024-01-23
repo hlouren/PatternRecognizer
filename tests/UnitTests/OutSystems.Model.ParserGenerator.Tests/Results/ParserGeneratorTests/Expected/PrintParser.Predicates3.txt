@@ -1,0 +1,19 @@
+Actions
+    (0, id) -> Shift(1)
+    (1, $) -> Reduce(3)
+    (2, $) -> Reduce(2)
+    (3, $) -> Reduce(1), Reduce(2)
+    (4, $) -> Accept
+
+Goto
+    (0, A) -> { f -> 2 ; t -> 3 } ; 1 classifiers
+    (0, S) -> 4
+
+Rules
+    0: BigBang -> S
+    1: S -> A[Predicate]
+    2: S -> A
+    3: A -> id
+
+Conflicts
+    (3, $) -> Reduce(1), Reduce(2)

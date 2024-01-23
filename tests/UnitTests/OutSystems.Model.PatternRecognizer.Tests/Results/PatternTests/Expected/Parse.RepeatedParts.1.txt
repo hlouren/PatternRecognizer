@@ -1,0 +1,12 @@
+If.1
+    NativeWidgets: { <IfWidget> <TrueBranch> <TextWidget Text=Text in true branch /> </TrueBranch> <FalseBranch> <TextWidget Text=Text #1 in false branch /> <TextWidget Text=Text #2 in false branch /> </FalseBranch> </IfWidget> }
+    Captures:
+        ChildTrue -> [ Text.1 ]
+        ChildFalse -> [ Text.1, Text.1 ]
+    Children:
+        Text.1
+            NativeWidgets: { <TextWidget Text=Text in true branch /> }
+        Text.1
+            NativeWidgets: { <TextWidget Text=Text #1 in false branch /> }
+        Text.1
+            NativeWidgets: { <TextWidget Text=Text #2 in false branch /> }

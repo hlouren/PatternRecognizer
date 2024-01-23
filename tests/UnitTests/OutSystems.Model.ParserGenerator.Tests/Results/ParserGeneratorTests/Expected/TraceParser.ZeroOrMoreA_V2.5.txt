@@ -1,0 +1,12 @@
+Testing "a b" -> Error
+------------------
+    
+    token=a stack=[ 0 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule S -> 
+    
+    token=a stack=[ 0 S 1 ]
+    Action Shift(2)
+    
+    token=b stack=[ 0 S 1 a 2 ]
+    Unexpected token b

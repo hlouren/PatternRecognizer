@@ -1,0 +1,49 @@
+Testing "n + n" -> OK
+------------------
+    
+    token=n stack=[ 0 ]
+    Action Shift(2)
+    
+    token=+ stack=[ 0 n 2 ]
+    Action Reduce(6)
+    Reducing 1 symbols with rule F -> n
+    
+    token=+ stack=[ 0 F 4 ]
+    Action Reduce(4)
+    Reducing 1 symbols with rule T -> F
+    
+    token=+ stack=[ 0 T 5 ]
+    Action Reduce(2)
+    Reducing 1 symbols with rule E -> T
+    
+    token=+ stack=[ 0 E 3 ]
+    Action Shift(7)
+    
+    token=n stack=[ 0 E 3 + 7 ]
+    Action Shift(2)
+    
+    token=$ stack=[ 0 E 3 + 7 n 2 ]
+    Action Reduce(6)
+    Reducing 1 symbols with rule F -> n
+    
+    token=$ stack=[ 0 E 3 + 7 F 4 ]
+    Action Reduce(4)
+    Reducing 1 symbols with rule T -> F
+    
+    token=$ stack=[ 0 E 3 + 7 T 10 ]
+    Action Reduce(1)
+    Reducing 3 symbols with rule E -> e1=E + e2=T
+    
+    token=$ stack=[ 0 E 3 ]
+    Action Accept
+    
+    Parse result:
+    E
+        E CaptureName=e1
+            T
+                F
+                    n
+        +
+        T CaptureName=e2
+            F
+                n

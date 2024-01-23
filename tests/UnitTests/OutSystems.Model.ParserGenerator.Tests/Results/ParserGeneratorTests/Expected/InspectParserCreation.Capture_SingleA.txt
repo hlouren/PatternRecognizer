@@ -1,0 +1,54 @@
+Rules
+----------
+0: BigBang -> S
+1: S -> c=a
+
+RuleItems
+----------
+0: BigBang -> . S
+1: BigBang -> S .
+2: S -> . c=a
+3: S -> c=a .
+
+First
+----------
+BigBang: a
+S: a
+
+Follow
+----------
+BigBang: $
+S: $
+
+Created set 0: { BigBang -> . S, S -> . c=a }
+
+Processing state 0: { BigBang -> . S, S -> . c=a }
+    Token a
+        Created set 1: { S -> c=a . }
+        Created shift(1) on a
+        Created transition 0 -[a]-> 1
+    Token S
+        Created set 2: { BigBang -> S . }
+        Created goto(2) on S
+        Created transition 0 -[S]-> 2
+
+Processing state 1: { S -> c=a . }
+    Created reduce(1) on $
+
+Processing state 2: { BigBang -> S . }
+    Created accept
+
+Parser
+------
+
+    Actions
+        (0, a) -> Shift(1)
+        (1, $) -> Reduce(1)
+        (2, $) -> Accept
+    
+    Goto
+        (0, S) -> 2
+    
+    Rules
+        0: BigBang -> S
+        1: S -> c=a

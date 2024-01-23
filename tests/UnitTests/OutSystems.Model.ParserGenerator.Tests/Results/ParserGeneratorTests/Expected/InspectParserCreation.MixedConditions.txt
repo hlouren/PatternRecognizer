@@ -1,0 +1,162 @@
+Rules
+----------
+0: BigBang -> S
+1: S -> <b> <t/>[Token.Value = "abc"] </b>
+2: S -> <b> <t/>[Token.Value = "def"] </b>
+3: S -> <b> <t/>[Predicate] </b>
+4: S -> <b> <t/> </b>
+
+RuleItems
+----------
+0: BigBang -> . S
+1: BigBang -> S .
+2: S -> . <b> <t/>[Token.Value = "abc"] </b>
+3: S -> <b> . <t/>[Token.Value = "abc"] </b>
+4: S -> <b> <t/>[Token.Value = "abc"] . </b>
+5: S -> <b> <t/>[Token.Value = "abc"] </b> .
+6: S -> . <b> <t/>[Token.Value = "def"] </b>
+7: S -> <b> . <t/>[Token.Value = "def"] </b>
+8: S -> <b> <t/>[Token.Value = "def"] . </b>
+9: S -> <b> <t/>[Token.Value = "def"] </b> .
+10: S -> . <b> <t/>[Predicate] </b>
+11: S -> <b> . <t/>[Predicate] </b>
+12: S -> <b> <t/>[Predicate] . </b>
+13: S -> <b> <t/>[Predicate] </b> .
+14: S -> . <b> <t/> </b>
+15: S -> <b> . <t/> </b>
+16: S -> <b> <t/> . </b>
+17: S -> <b> <t/> </b> .
+
+First
+----------
+BigBang: <b>
+S: <b>
+
+Follow
+----------
+BigBang: $
+S: $
+
+Created set 0: { BigBang -> . S, S -> . <b> <t/>[Token.Value = "abc"] </b>, S -> . <b> <t/>[Token.Value = "def"] </b>, S -> . <b> <t/>[Predicate] </b>, S -> . <b> <t/> </b> }
+
+Processing state 0: { BigBang -> . S, S -> . <b> <t/>[Token.Value = "abc"] </b>, S -> . <b> <t/>[Token.Value = "def"] </b>, S -> . <b> <t/>[Predicate] </b>, S -> . <b> <t/> </b> }
+    Token <b>
+        Created set 1: { S -> <b> . <t/>[Token.Value = "abc"] </b>, S -> <b> . <t/>[Token.Value = "def"] </b>, S -> <b> . <t/>[Predicate] </b>, S -> <b> . <t/> </b> }
+        Created shift(1) on <b>
+        Created transition 0 -[<b>]-> 1
+    Token S
+        Created set 2: { BigBang -> S . }
+        Created goto(2) on S
+        Created transition 0 -[S]-> 2
+
+Processing state 1: { S -> <b> . <t/>[Token.Value = "abc"] </b>, S -> <b> . <t/>[Token.Value = "def"] </b>, S -> <b> . <t/>[Predicate] </b>, S -> <b> . <t/> </b> }
+    Token <t/>
+        Created set 3: { S -> <b> <t/> . </b> }
+        Created set 4: { S -> <b> <t/>[Token.Value = "abc"] . </b>, S -> <b> <t/> . </b> }
+        Created set 5: { S -> <b> <t/>[Token.Value = "def"] . </b>, S -> <b> <t/> . </b> }
+        Created set 6: { S -> <b> <t/>[Predicate] . </b>, S -> <b> <t/> . </b> }
+        Created set 7: { S -> <b> <t/>[Token.Value = "abc"] . </b>, S -> <b> <t/>[Predicate] . </b>, S -> <b> <t/> . </b> }
+        Created set 8: { S -> <b> <t/>[Token.Value = "def"] . </b>, S -> <b> <t/>[Predicate] . </b>, S -> <b> <t/> . </b> }
+        Created shift({ (unknown,f) -> 3 ; (abc,f) -> 4 ; (def,f) -> 5 ; (unknown,t) -> 6 ; (abc,t) -> 7 ; (def,t) -> 8 }) on <t/>
+        Created transition 1 -[<t/>]-> { (unknown,f) -> 3 ; (abc,f) -> 4 ; (def,f) -> 5 ; (unknown,t) -> 6 ; (abc,t) -> 7 ; (def,t) -> 8 }
+
+Processing state 2: { BigBang -> S . }
+    Created accept
+
+Processing state 3: { S -> <b> <t/> . </b> }
+    Token </b>
+        Created set 9: { S -> <b> <t/> </b> . }
+        Created shift(9) on </b>
+        Created transition 3 -[</b>]-> 9
+
+Processing state 4: { S -> <b> <t/>[Token.Value = "abc"] . </b>, S -> <b> <t/> . </b> }
+    Token </b>
+        Created set 10: { S -> <b> <t/>[Token.Value = "abc"] </b> ., S -> <b> <t/> </b> . }
+        Created shift(10) on </b>
+        Created transition 4 -[</b>]-> 10
+
+Processing state 5: { S -> <b> <t/>[Token.Value = "def"] . </b>, S -> <b> <t/> . </b> }
+    Token </b>
+        Created set 11: { S -> <b> <t/>[Token.Value = "def"] </b> ., S -> <b> <t/> </b> . }
+        Created shift(11) on </b>
+        Created transition 5 -[</b>]-> 11
+
+Processing state 6: { S -> <b> <t/>[Predicate] . </b>, S -> <b> <t/> . </b> }
+    Token </b>
+        Created set 12: { S -> <b> <t/>[Predicate] </b> ., S -> <b> <t/> </b> . }
+        Created shift(12) on </b>
+        Created transition 6 -[</b>]-> 12
+
+Processing state 7: { S -> <b> <t/>[Token.Value = "abc"] . </b>, S -> <b> <t/>[Predicate] . </b>, S -> <b> <t/> . </b> }
+    Token </b>
+        Created set 13: { S -> <b> <t/>[Token.Value = "abc"] </b> ., S -> <b> <t/>[Predicate] </b> ., S -> <b> <t/> </b> . }
+        Created shift(13) on </b>
+        Created transition 7 -[</b>]-> 13
+
+Processing state 8: { S -> <b> <t/>[Token.Value = "def"] . </b>, S -> <b> <t/>[Predicate] . </b>, S -> <b> <t/> . </b> }
+    Token </b>
+        Created set 14: { S -> <b> <t/>[Token.Value = "def"] </b> ., S -> <b> <t/>[Predicate] </b> ., S -> <b> <t/> </b> . }
+        Created shift(14) on </b>
+        Created transition 8 -[</b>]-> 14
+
+Processing state 9: { S -> <b> <t/> </b> . }
+    Created reduce(4) on $
+
+Processing state 10: { S -> <b> <t/>[Token.Value = "abc"] </b> ., S -> <b> <t/> </b> . }
+    Created reduce(1) on $
+    Created reduce(4) on $
+
+Processing state 11: { S -> <b> <t/>[Token.Value = "def"] </b> ., S -> <b> <t/> </b> . }
+    Created reduce(2) on $
+    Created reduce(4) on $
+
+Processing state 12: { S -> <b> <t/>[Predicate] </b> ., S -> <b> <t/> </b> . }
+    Created reduce(3) on $
+    Created reduce(4) on $
+
+Processing state 13: { S -> <b> <t/>[Token.Value = "abc"] </b> ., S -> <b> <t/>[Predicate] </b> ., S -> <b> <t/> </b> . }
+    Created reduce(1) on $
+    Created reduce(3) on $
+    Created reduce(4) on $
+
+Processing state 14: { S -> <b> <t/>[Token.Value = "def"] </b> ., S -> <b> <t/>[Predicate] </b> ., S -> <b> <t/> </b> . }
+    Created reduce(2) on $
+    Created reduce(3) on $
+    Created reduce(4) on $
+
+Parser
+------
+
+    Actions
+        (0, <b>) -> Shift(1)
+        (1, <t/>) -> Shift({ (unknown,f) -> 3 ; (abc,f) -> 4 ; (def,f) -> 5 ; (unknown,t) -> 6 ; (abc,t) -> 7 ; (def,t) -> 8 }) ; 2 classifiers
+        (2, $) -> Accept
+        (3, </b>) -> Shift(9)
+        (4, </b>) -> Shift(10)
+        (5, </b>) -> Shift(11)
+        (6, </b>) -> Shift(12)
+        (7, </b>) -> Shift(13)
+        (8, </b>) -> Shift(14)
+        (9, $) -> Reduce(4)
+        (10, $) -> Reduce(1), Reduce(4)
+        (11, $) -> Reduce(2), Reduce(4)
+        (12, $) -> Reduce(3), Reduce(4)
+        (13, $) -> Reduce(1), Reduce(3), Reduce(4)
+        (14, $) -> Reduce(2), Reduce(3), Reduce(4)
+    
+    Goto
+        (0, S) -> 2
+    
+    Rules
+        0: BigBang -> S
+        1: S -> <b> <t/>[Token.Value = "abc"] </b>
+        2: S -> <b> <t/>[Token.Value = "def"] </b>
+        3: S -> <b> <t/>[Predicate] </b>
+        4: S -> <b> <t/> </b>
+    
+    Conflicts
+        (10, $) -> Reduce(1), Reduce(4)
+        (11, $) -> Reduce(2), Reduce(4)
+        (12, $) -> Reduce(3), Reduce(4)
+        (13, $) -> Reduce(1), Reduce(3), Reduce(4)
+        (14, $) -> Reduce(2), Reduce(3), Reduce(4)

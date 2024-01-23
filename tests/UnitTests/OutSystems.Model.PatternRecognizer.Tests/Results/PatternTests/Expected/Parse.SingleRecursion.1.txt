@@ -1,0 +1,4 @@
+List.1
+    NativeWidgets: { <ListWidget> <ListItem>  </ListItem> </ListWidget> }
+    Captures:
+        Child -> [  ]

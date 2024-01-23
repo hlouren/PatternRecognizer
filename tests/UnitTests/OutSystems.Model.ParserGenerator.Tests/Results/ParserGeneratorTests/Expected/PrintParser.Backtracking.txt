@@ -1,0 +1,29 @@
+Actions
+    (0, a) -> Shift(1)
+    (1, a) -> Shift(3)
+    (2, $) -> Accept
+    (3, a) -> Shift(4)
+    (4, $) -> Reduce(5), Reduce(6)
+    (5, $) -> Reduce(1)
+    (7, $) -> Reduce(3)
+    (8, $) -> Reduce(2)
+    (9, $) -> Reduce(4)
+
+Goto
+    (0, S) -> 2
+    (3, A) -> 5
+    (3, A2) -> { f -> 6 ; t -> 7 } ; 1 classifiers
+    (3, B) -> 8
+    (3, B2) -> 9
+
+Rules
+    0: BigBang -> S
+    1: S -> a a A
+    2: S -> a a B
+    3: A -> A2[Predicate]
+    4: B -> B2
+    5: A2 -> a
+    6: B2 -> a
+
+Conflicts
+    (4, $) -> Reduce(5), Reduce(6)

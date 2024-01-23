@@ -1,0 +1,17 @@
+Testing "id[xpto]" -> OK
+------------------
+    
+    token=id stack=[ 0 ]
+    Multiple actions found: Shift(2), Shift(3)
+    Action Shift(2)
+    
+    configurationCount=1 token=$ stack=[ 0 id 2 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule S_R1 -> id?p
+    
+    configurationCount=1 token=$ stack=[ 0 S 1 ]
+    Action Accept
+    
+    Parse result:
+    R1
+        xpto

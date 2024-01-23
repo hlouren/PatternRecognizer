@@ -1,0 +1,6 @@
+Pattern Text.1 : VirtualWidget
+    ITextWidget
+
+Pattern Expr.1 : VirtualWidget
+    ITextWidget
+    IExpressionWidget

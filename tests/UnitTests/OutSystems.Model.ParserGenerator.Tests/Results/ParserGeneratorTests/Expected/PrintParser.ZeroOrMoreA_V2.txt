@@ -1,0 +1,15 @@
+Actions
+    (0, $) -> Reduce(2)
+    (0, a) -> Reduce(2)
+    (1, $) -> Accept
+    (1, a) -> Shift(2)
+    (2, $) -> Reduce(1)
+    (2, a) -> Reduce(1)
+
+Goto
+    (0, S) -> 1
+
+Rules
+    0: BigBang -> S
+    1: S -> S a
+    2: S ->

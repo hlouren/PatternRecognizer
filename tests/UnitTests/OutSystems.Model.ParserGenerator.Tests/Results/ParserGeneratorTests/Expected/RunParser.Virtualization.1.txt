@@ -1,0 +1,8 @@
+<text/>
+
+Screen
+    VirtualWidgets
+        VirtualWidget
+            NativeWidget
+                <text/>
+        VirtualWidgets

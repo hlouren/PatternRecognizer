@@ -1,0 +1,13 @@
+<list> <text/> </list>
+
+Screen
+    VirtualWidgets
+        List.0
+            <list>
+            VirtualWidgets
+                VirtualWidget
+                    NativeWidget
+                        <text/>
+                VirtualWidgets
+            </list>
+        VirtualWidgets

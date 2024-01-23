@@ -1,0 +1,2 @@
+Texts.1
+    NativeWidgets: { <TextWidget Text=Text #1 />, <TextWidget Text=Text #2 />, <TextWidget Text=Text #3 /> }

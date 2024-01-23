@@ -1,0 +1,82 @@
+Rules
+----------
+0: BigBang -> S
+1: S -> A[Predicate]
+2: S -> A
+3: A -> id
+
+RuleItems
+----------
+0: BigBang -> . S
+1: BigBang -> S .
+2: S -> . A[Predicate]
+3: S -> A[Predicate] .
+4: S -> . A
+5: S -> A .
+6: A -> . id
+7: A -> id .
+
+First
+----------
+A: id
+BigBang: id
+S: id
+
+Follow
+----------
+A: $
+BigBang: $
+S: $
+
+Created set 0: { BigBang -> . S, S -> . A[Predicate], S -> . A, A -> . id }
+
+Processing state 0: { BigBang -> . S, S -> . A[Predicate], S -> . A, A -> . id }
+    Token id
+        Created set 1: { A -> id . }
+        Created shift(1) on id
+        Created transition 0 -[id]-> 1
+    Token A
+        Created set 2: { S -> A . }
+        Created set 3: { S -> A[Predicate] ., S -> A . }
+        Created goto({ f -> 2 ; t -> 3 }) on A
+        Created transition 0 -[A]-> { f -> 2 ; t -> 3 }
+    Token S
+        Created set 4: { BigBang -> S . }
+        Created goto(4) on S
+        Created transition 0 -[S]-> 4
+
+Processing state 1: { A -> id . }
+    Created reduce(3) on $
+
+Processing state 2: { S -> A . }
+    Created reduce(2) on $
+
+Processing state 3: { S -> A[Predicate] ., S -> A . }
+    Created reduce(1) on $
+    Created reduce(2) on $
+
+Processing state 4: { BigBang -> S . }
+    Created accept
+
+Parser
+------
+
+    Actions
+        (0, id) -> Shift(1)
+        (1, $) -> Reduce(3)
+        (2, $) -> Reduce(2)
+        (3, $) -> Reduce(1), Reduce(2)
+        (4, $) -> Accept
+    
+    Goto
+        (0, A) -> { f -> 2 ; t -> 3 } ; 1 classifiers
+        (0, S) -> 4
+    
+    Rules
+        0: BigBang -> S
+        1: S -> A[Predicate]
+        2: S -> A
+        3: A -> id
+    
+    Conflicts
+        (3, $) -> Reduce(1), Reduce(2)

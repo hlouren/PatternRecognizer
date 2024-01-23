@@ -1,0 +1,16 @@
+Pattern Text.1 : VirtualWidget
+    ITextWidget
+
+Pattern Expr.1 : VirtualWidget
+    IExpressionWidget
+
+Pattern Table.1 : VirtualWidget
+    w1=ITableWidget
+    |   w2=HeaderRow
+    |   |   w3=IHeaderCellWidget*
+    |   |   |   w4=Content
+    |   |   |   |   CHeader=VirtualWidget*
+    |   w5=DataRow
+    |   |   w6=IDataCellWidget*
+    |   |   |   w7=Content
+    |   |   |   |   CData=VirtualWidget*

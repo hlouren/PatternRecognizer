@@ -1,0 +1,25 @@
+Testing "<b> <t/>[ghi] </b>" -> OK
+------------------
+    
+    token=<b> stack=[ 0 ]
+    Action Shift(1)
+    
+    token=<t/> stack=[ 0 <b> 1 ]
+    Action Shift(6)
+    
+    token=</b> stack=[ 0 <b> 1 <t/> 6 ]
+    Action Shift(12)
+    
+    token=$ stack=[ 0 <b> 1 <t/> 6 </b> 12 ]
+    Multiple actions found: Reduce(3), Reduce(4)
+    Action Reduce(3)
+    Reducing 3 symbols with rule S -> <b> <t/>[Predicate] </b>
+    
+    configurationCount=1 token=$ stack=[ 0 S 2 ]
+    Action Accept
+    
+    Parse result:
+    R.3
+        <b>
+        ghi
+        </b>

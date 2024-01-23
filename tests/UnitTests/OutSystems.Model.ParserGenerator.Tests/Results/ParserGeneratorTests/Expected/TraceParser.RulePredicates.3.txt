@@ -1,0 +1,32 @@
+Testing "<b> <t/>[hello] </b>" -> OK
+------------------
+    
+    token=<b> stack=[ 0 ]
+    Action Shift(1)
+    
+    token=<t/> stack=[ 0 <b> 1 ]
+    Action Shift(3)
+    
+    token=</b> stack=[ 0 <b> 1 <t/> 3 ]
+    Action Shift(4)
+    
+    token=$ stack=[ 0 <b> 1 <t/> 3 </b> 4 ]
+    Multiple actions found: Reduce(1), Reduce(2)
+    Action Reduce(1)
+    Reducing 3 symbols with rule S -> <b> <t/> </b>
+    Rule rejected reduce
+    
+    Backtracking...
+    
+    token=$ stack=[ 0 <b> 1 <t/> 3 </b> 4 ]
+    Action Reduce(2)
+    Reducing 3 symbols with rule S -> <b> <t/> </b>
+    
+    token=$ stack=[ 0 S 2 ]
+    Action Accept
+    
+    Parse result:
+    R.2
+        <b>
+        hello
+        </b>

@@ -1,0 +1,25 @@
+Testing "<b> <t/>[xpto] </b>" -> OK
+------------------
+    
+    token=<b> stack=[ 0 ]
+    Action Shift(1)
+    
+    token=<t/> stack=[ 0 <b> 1 ]
+    Action Shift(3)
+    
+    token=</b> stack=[ 0 <b> 1 <t/> 3 ]
+    Action Shift(4)
+    
+    token=$ stack=[ 0 <b> 1 <t/> 3 </b> 4 ]
+    Multiple actions found: Reduce(1), Reduce(2)
+    Action Reduce(1)
+    Reducing 3 symbols with rule S -> <b> <t/> </b>
+    
+    configurationCount=1 token=$ stack=[ 0 S 2 ]
+    Action Accept
+    
+    Parse result:
+    R.1
+        <b>
+        xpto
+        </b>

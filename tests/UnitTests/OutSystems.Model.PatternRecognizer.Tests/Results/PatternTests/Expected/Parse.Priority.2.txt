@@ -1,0 +1,13 @@
+Table.1
+    NativeWidgets: { <TableWidget> <HeaderRow> <HeaderCellWidget> <Content> <TextWidget Text=Text #1 /> </Content> </HeaderCellWidget> </HeaderRow> <DataRow> <DataCellWidget> <Content> <ExpressionWidget Value= /> </Content> </DataCellWidget> </DataRow> </TableWidget> }
+    Captures:
+        CHeader -> [ <HeaderCellWidget> <Content> <TextWidget Text=Text #1 /> </Content> </HeaderCellWidget>, [ Label.1 ] ]
+        CData -> [ <DataCellWidget> <Content> <ExpressionWidget Value= /> </Content> </DataCellWidget>, [ Expr.1 ] ]
+    Children:
+        Group
+            NativeWidgets: {  }
+            Children:
+                Label.1
+                    NativeWidgets: { <TextWidget Text=Text #1 /> }
+                Expr.1
+                    NativeWidgets: { <ExpressionWidget Value= /> }

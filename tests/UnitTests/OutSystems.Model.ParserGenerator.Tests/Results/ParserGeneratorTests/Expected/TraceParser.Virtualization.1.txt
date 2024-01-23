@@ -1,0 +1,36 @@
+Testing "<text/>" -> OK
+------------------
+    
+    token=<text/> stack=[ 0 ]
+    Action Shift(5)
+    
+    token=$ stack=[ 0 <text/> 5 ]
+    Action Reduce(11)
+    Reducing 1 symbols with rule NativeWidget -> <text/>
+    
+    token=$ stack=[ 0 NativeWidget 6 ]
+    Action Reduce(10)
+    Reducing 1 symbols with rule VirtualWidget -> NativeWidget
+    
+    token=$ stack=[ 0 VirtualWidget 8 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    token=$ stack=[ 0 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    token=$ stack=[ 0 VirtualWidgets 9 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule Screen -> VirtualWidgets
+    
+    token=$ stack=[ 0 Screen 7 ]
+    Action Accept
+    
+    Parse result:
+    Screen
+        VirtualWidgets
+            VirtualWidget
+                NativeWidget
+                    <text/>
+            VirtualWidgets

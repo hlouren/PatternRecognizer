@@ -1,0 +1,9 @@
+a a a
+
+S
+    S
+        S
+            S
+            a
+        a
+    a

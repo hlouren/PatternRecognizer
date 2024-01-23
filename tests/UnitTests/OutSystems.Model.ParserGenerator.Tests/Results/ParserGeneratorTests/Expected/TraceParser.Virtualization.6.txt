@@ -1,0 +1,44 @@
+Testing "<label> <text/> </label> <expression/>" -> OK
+------------------
+    
+    token=<label> stack=[ 0 ]
+    Action Shift(3)
+    
+    token=<text/> stack=[ 0 <label> 3 ]
+    Action Shift(10)
+    
+    token=</label> stack=[ 0 <label> 3 <text/> 10 ]
+    Multiple actions found: Shift(17), Reduce(11)
+    Action Shift(17)
+    
+    configurationCount=1 token=<expression/> stack=[ 0 <label> 3 <text/> 10 </label> 17 ]
+    Action Shift(21)
+    
+    configurationCount=1 token=$ stack=[ 0 <label> 3 <text/> 10 </label> 17 <expression/> 21 ]
+    Action Reduce(5)
+    Reducing 4 symbols with rule VirtualWidget -> <label> <text/> </label> <expression/>
+    
+    configurationCount=1 token=$ stack=[ 0 VirtualWidget 8 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    configurationCount=1 token=$ stack=[ 0 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    configurationCount=1 token=$ stack=[ 0 VirtualWidgets 9 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule Screen -> VirtualWidgets
+    
+    configurationCount=1 token=$ stack=[ 0 Screen 7 ]
+    Action Accept
+    
+    Parse result:
+    Screen
+        VirtualWidgets
+            ExprField.1
+                <label>
+                <text/>
+                </label>
+                <expression/>
+            VirtualWidgets

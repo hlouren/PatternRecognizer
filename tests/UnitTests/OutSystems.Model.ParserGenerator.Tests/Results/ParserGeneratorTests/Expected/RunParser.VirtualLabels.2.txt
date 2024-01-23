@@ -1,0 +1,29 @@
+<table> <hr> <hc> <expression/> </hc> </hr> <dr> <dc> <text/> </dc> </dr> </table>
+
+Screen
+    VirtualWidgets
+        VirtualWidget
+            NativeWidget
+                <table>
+                <hr>
+                NativeTableHeaders
+                    NativeTableHeader
+                        <hc>
+                        VirtualWidget
+                            NativeWidget
+                                <expression/>
+                        </hc>
+                    NativeTableHeaders
+                </hr>
+                <dr>
+                NativeTableDatas
+                    NativeTableData
+                        <dc>
+                        VirtualWidget
+                            NativeWidget
+                                <text/>
+                        </dc>
+                    NativeTableDatas
+                </dr>
+                </table>
+        VirtualWidgets

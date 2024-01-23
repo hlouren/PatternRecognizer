@@ -1,0 +1,102 @@
+Testing "<label> <text/> <text/> </label> <expression/>" -> OK
+------------------
+    
+    token=<label> stack=[ 0 ]
+    Action Shift(3)
+    
+    token=<text/> stack=[ 0 <label> 3 ]
+    Action Shift(10)
+    
+    token=<text/> stack=[ 0 <label> 3 <text/> 10 ]
+    Action Reduce(11)
+    Reducing 1 symbols with rule NativeWidget -> <text/>
+    
+    token=<text/> stack=[ 0 <label> 3 NativeWidget 6 ]
+    Action Reduce(10)
+    Reducing 1 symbols with rule VirtualWidget -> NativeWidget
+    
+    token=<text/> stack=[ 0 <label> 3 VirtualWidget 8 ]
+    Action Shift(5)
+    
+    token=</label> stack=[ 0 <label> 3 VirtualWidget 8 <text/> 5 ]
+    Action Reduce(11)
+    Reducing 1 symbols with rule NativeWidget -> <text/>
+    
+    token=</label> stack=[ 0 <label> 3 VirtualWidget 8 NativeWidget 6 ]
+    Action Reduce(10)
+    Reducing 1 symbols with rule VirtualWidget -> NativeWidget
+    
+    token=</label> stack=[ 0 <label> 3 VirtualWidget 8 VirtualWidget 8 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    token=</label> stack=[ 0 <label> 3 VirtualWidget 8 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    token=</label> stack=[ 0 <label> 3 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    token=</label> stack=[ 0 <label> 3 VirtualWidgets 11 ]
+    Action Shift(18)
+    
+    token=<expression/> stack=[ 0 <label> 3 VirtualWidgets 11 </label> 18 ]
+    Action Reduce(12)
+    Reducing 3 symbols with rule NativeWidget -> <label> VirtualWidgets </label>
+    
+    token=<expression/> stack=[ 0 NativeWidget 6 ]
+    Action Reduce(10)
+    Reducing 1 symbols with rule VirtualWidget -> NativeWidget
+    
+    token=<expression/> stack=[ 0 VirtualWidget 8 ]
+    Action Shift(1)
+    
+    token=$ stack=[ 0 VirtualWidget 8 <expression/> 1 ]
+    Action Reduce(13)
+    Reducing 1 symbols with rule NativeWidget -> <expression/>
+    
+    token=$ stack=[ 0 VirtualWidget 8 NativeWidget 6 ]
+    Action Reduce(10)
+    Reducing 1 symbols with rule VirtualWidget -> NativeWidget
+    
+    token=$ stack=[ 0 VirtualWidget 8 VirtualWidget 8 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    token=$ stack=[ 0 VirtualWidget 8 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    token=$ stack=[ 0 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    token=$ stack=[ 0 VirtualWidgets 9 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule Screen -> VirtualWidgets
+    
+    token=$ stack=[ 0 Screen 7 ]
+    Action Accept
+    
+    Parse result:
+    Screen
+        VirtualWidgets
+            VirtualWidget
+                NativeWidget
+                    <label>
+                    VirtualWidgets
+                        VirtualWidget
+                            NativeWidget
+                                <text/>
+                        VirtualWidgets
+                            VirtualWidget
+                                NativeWidget
+                                    <text/>
+                            VirtualWidgets
+                    </label>
+            VirtualWidgets
+                VirtualWidget
+                    NativeWidget
+                        <expression/>
+                VirtualWidgets

@@ -1,0 +1,143 @@
+Rules
+----------
+0: BigBang -> S
+1: S -> a a A
+2: S -> a a B
+3: A -> A2[Predicate]
+4: B -> B2
+5: A2 -> a
+6: B2 -> a
+
+RuleItems
+----------
+0: BigBang -> . S
+1: BigBang -> S .
+2: S -> . a a A
+3: S -> a . a A
+4: S -> a a . A
+5: S -> a a A .
+6: S -> . a a B
+7: S -> a . a B
+8: S -> a a . B
+9: S -> a a B .
+10: A -> . A2[Predicate]
+11: A -> A2[Predicate] .
+12: B -> . B2
+13: B -> B2 .
+14: A2 -> . a
+15: A2 -> a .
+16: B2 -> . a
+17: B2 -> a .
+
+First
+----------
+A: a
+A2: a
+B: a
+B2: a
+BigBang: a
+S: a
+
+Follow
+----------
+A: $
+A2: $
+B: $
+B2: $
+BigBang: $
+S: $
+
+Created set 0: { BigBang -> . S, S -> . a a A, S -> . a a B }
+
+Processing state 0: { BigBang -> . S, S -> . a a A, S -> . a a B }
+    Token a
+        Created set 1: { S -> a . a A, S -> a . a B }
+        Created shift(1) on a
+        Created transition 0 -[a]-> 1
+    Token S
+        Created set 2: { BigBang -> S . }
+        Created goto(2) on S
+        Created transition 0 -[S]-> 2
+
+Processing state 1: { S -> a . a A, S -> a . a B }
+    Token a
+        Created set 3: { S -> a a . A, S -> a a . B, A -> . A2[Predicate], B -> . B2, A2 -> . a, B2 -> . a }
+        Created shift(3) on a
+        Created transition 1 -[a]-> 3
+
+Processing state 2: { BigBang -> S . }
+    Created accept
+
+Processing state 3: { S -> a a . A, S -> a a . B, A -> . A2[Predicate], B -> . B2, A2 -> . a, B2 -> . a }
+    Token a
+        Created set 4: { A2 -> a ., B2 -> a . }
+        Created shift(4) on a
+        Created transition 3 -[a]-> 4
+    Token A
+        Created set 5: { S -> a a A . }
+        Created goto(5) on A
+        Created transition 3 -[A]-> 5
+    Token A2
+        Created set 6: {  }
+        Created set 7: { A -> A2[Predicate] . }
+        Created goto({ f -> 6 ; t -> 7 }) on A2
+        Created transition 3 -[A2]-> { f -> 6 ; t -> 7 }
+    Token B
+        Created set 8: { S -> a a B . }
+        Created goto(8) on B
+        Created transition 3 -[B]-> 8
+    Token B2
+        Created set 9: { B -> B2 . }
+        Created goto(9) on B2
+        Created transition 3 -[B2]-> 9
+
+Processing state 4: { A2 -> a ., B2 -> a . }
+    Created reduce(5) on $
+    Created reduce(6) on $
+
+Processing state 5: { S -> a a A . }
+    Created reduce(1) on $
+
+Processing state 6: {  }
+
+Processing state 7: { A -> A2[Predicate] . }
+    Created reduce(3) on $
+
+Processing state 8: { S -> a a B . }
+    Created reduce(2) on $
+
+Processing state 9: { B -> B2 . }
+    Created reduce(4) on $
+
+Parser
+------
+
+    Actions
+        (0, a) -> Shift(1)
+        (1, a) -> Shift(3)
+        (2, $) -> Accept
+        (3, a) -> Shift(4)
+        (4, $) -> Reduce(5), Reduce(6)
+        (5, $) -> Reduce(1)
+        (7, $) -> Reduce(3)
+        (8, $) -> Reduce(2)
+        (9, $) -> Reduce(4)
+    
+    Goto
+        (0, S) -> 2
+        (3, A) -> 5
+        (3, A2) -> { f -> 6 ; t -> 7 } ; 1 classifiers
+        (3, B) -> 8
+        (3, B2) -> 9
+    
+    Rules
+        0: BigBang -> S
+        1: S -> a a A
+        2: S -> a a B
+        3: A -> A2[Predicate]
+        4: B -> B2
+        5: A2 -> a
+        6: B2 -> a
+    
+    Conflicts
+        (4, $) -> Reduce(5), Reduce(6)

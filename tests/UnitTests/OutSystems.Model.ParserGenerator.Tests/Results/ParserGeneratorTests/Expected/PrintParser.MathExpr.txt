@@ -1,0 +1,57 @@
+Actions
+    (0, () -> Shift(1)
+    (0, n) -> Shift(2)
+    (1, () -> Shift(1)
+    (1, n) -> Shift(2)
+    (2, )) -> Reduce(6)
+    (2, *) -> Reduce(6)
+    (2, +) -> Reduce(6)
+    (2, $) -> Reduce(6)
+    (3, +) -> Shift(7)
+    (3, $) -> Accept
+    (4, )) -> Reduce(4)
+    (4, *) -> Reduce(4)
+    (4, +) -> Reduce(4)
+    (4, $) -> Reduce(4)
+    (5, )) -> Reduce(2)
+    (5, *) -> Shift(8)
+    (5, +) -> Reduce(2)
+    (5, $) -> Reduce(2)
+    (6, )) -> Shift(9)
+    (6, +) -> Shift(7)
+    (7, () -> Shift(1)
+    (7, n) -> Shift(2)
+    (8, () -> Shift(1)
+    (8, n) -> Shift(2)
+    (9, )) -> Reduce(5)
+    (9, *) -> Reduce(5)
+    (9, +) -> Reduce(5)
+    (9, $) -> Reduce(5)
+    (10, )) -> Reduce(1)
+    (10, *) -> Shift(8)
+    (10, +) -> Reduce(1)
+    (10, $) -> Reduce(1)
+    (11, )) -> Reduce(3)
+    (11, *) -> Reduce(3)
+    (11, +) -> Reduce(3)
+    (11, $) -> Reduce(3)
+
+Goto
+    (0, E) -> 3
+    (0, F) -> 4
+    (0, T) -> 5
+    (1, E) -> 6
+    (1, F) -> 4
+    (1, T) -> 5
+    (7, F) -> 4
+    (7, T) -> 10
+    (8, F) -> 11
+
+Rules
+    0: BigBang -> E
+    1: E -> E + T
+    2: E -> T
+    3: T -> T * F
+    4: T -> F
+    5: F -> ( E )
+    6: F -> n

@@ -1,0 +1,25 @@
+Testing "<b> <t/>[abc] </b>" -> OK
+------------------
+    
+    token=<b> stack=[ 0 ]
+    Action Shift(1)
+    
+    token=<t/> stack=[ 0 <b> 1 ]
+    Action Shift(4)
+    
+    token=</b> stack=[ 0 <b> 1 <t/> 4 ]
+    Action Shift(10)
+    
+    token=$ stack=[ 0 <b> 1 <t/> 4 </b> 10 ]
+    Multiple actions found: Reduce(1), Reduce(4)
+    Action Reduce(1)
+    Reducing 3 symbols with rule S -> <b> <t/>[Token.Value = "abc"] </b>
+    
+    configurationCount=1 token=$ stack=[ 0 S 2 ]
+    Action Accept
+    
+    Parse result:
+    R.1
+        <b>
+        abc
+        </b>

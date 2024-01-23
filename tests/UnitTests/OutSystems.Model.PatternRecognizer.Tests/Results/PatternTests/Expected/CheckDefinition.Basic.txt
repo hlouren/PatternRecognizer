@@ -1,0 +1,2 @@
+Pattern Text.1 : VirtualWidget
+    ITextWidget

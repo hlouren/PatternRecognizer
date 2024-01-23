@@ -1,0 +1,6 @@
+Text.1
+    NativeWidgets: { <TextWidget Text=Text #1 /> }
+Text.1
+    NativeWidgets: { <TextWidget Text=Text #2 /> }
+Text.1
+    NativeWidgets: { <TextWidget Text=Text #3 /> }

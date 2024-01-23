@@ -1,0 +1,22 @@
+<label> <text/> <text/> </label> <expression/>
+
+Screen
+    VirtualWidgets
+        VirtualWidget
+            NativeWidget
+                <label>
+                VirtualWidgets
+                    VirtualWidget
+                        NativeWidget
+                            <text/>
+                    VirtualWidgets
+                        VirtualWidget
+                            NativeWidget
+                                <text/>
+                        VirtualWidgets
+                </label>
+        VirtualWidgets
+            VirtualWidget
+                NativeWidget
+                    <expression/>
+            VirtualWidgets

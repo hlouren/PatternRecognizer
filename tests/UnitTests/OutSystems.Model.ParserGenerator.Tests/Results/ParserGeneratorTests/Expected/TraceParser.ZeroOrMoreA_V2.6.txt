@@ -1,0 +1,5 @@
+Testing "b a" -> Error
+------------------
+    
+    token=b stack=[ 0 ]
+    Unexpected token b

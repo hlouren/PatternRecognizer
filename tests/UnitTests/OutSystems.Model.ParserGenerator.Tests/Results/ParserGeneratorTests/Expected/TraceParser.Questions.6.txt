@@ -1,0 +1,11 @@
+Testing "! s" -> Error
+------------------
+    
+    token=! stack=[ 0 ]
+    Action Shift(1)
+    
+    token=s stack=[ 0 ! 1 ]
+    Action Shift(6)
+    
+    token=$ stack=[ 0 ! 1 s 6 ]
+    Unexpected token $

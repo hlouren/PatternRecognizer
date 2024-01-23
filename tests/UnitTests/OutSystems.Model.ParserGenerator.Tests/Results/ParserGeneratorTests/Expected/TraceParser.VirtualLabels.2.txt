@@ -1,0 +1,130 @@
+Testing "<table> <hr> <hc> <expression/> </hc> </hr> <dr> <dc> <text/> </dc> </dr> </table>" -> OK
+------------------
+    
+    token=<table> stack=[ 0 ]
+    Action Shift(3)
+    
+    token=<hr> stack=[ 0 <table> 3 ]
+    Action Shift(11)
+    
+    token=<hc> stack=[ 0 <table> 3 <hr> 11 ]
+    Action Shift(16)
+    
+    token=<expression/> stack=[ 0 <table> 3 <hr> 11 <hc> 16 ]
+    Action Shift(1)
+    
+    token=</hc> stack=[ 0 <table> 3 <hr> 11 <hc> 16 <expression/> 1 ]
+    Action Reduce(24)
+    Reducing 1 symbols with rule NativeWidget -> <expression/>
+    
+    token=</hc> stack=[ 0 <table> 3 <hr> 11 <hc> 16 NativeWidget 5 ]
+    Action Reduce(6)
+    Reducing 1 symbols with rule VirtualWidget -> NativeWidget
+    
+    token=</hc> stack=[ 0 <table> 3 <hr> 11 <hc> 16 VirtualWidget 25 ]
+    Action Shift(34)
+    
+    token=</hr> stack=[ 0 <table> 3 <hr> 11 <hc> 16 VirtualWidget 25 </hc> 34 ]
+    Action Reduce(29)
+    Reducing 3 symbols with rule NativeTableHeader -> <hc> VirtualWidget </hc>
+    
+    token=</hr> stack=[ 0 <table> 3 <hr> 11 NativeTableHeader 17 ]
+    Action Reduce(27)
+    Reducing 0 symbols with rule NativeTableHeaders -> 
+    
+    token=</hr> stack=[ 0 <table> 3 <hr> 11 NativeTableHeader 17 NativeTableHeaders 27 ]
+    Action Reduce(28)
+    Reducing 2 symbols with rule NativeTableHeaders -> NativeTableHeader NativeTableHeaders
+    
+    token=</hr> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 ]
+    Action Shift(28)
+    
+    token=<dr> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 ]
+    Action Shift(35)
+    
+    token=<dc> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 ]
+    Action Shift(40)
+    
+    token=<text/> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 <dc> 40 ]
+    Action Shift(4)
+    
+    token=</dc> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 <dc> 40 <text/> 4 ]
+    Action Reduce(23)
+    Reducing 1 symbols with rule NativeWidget -> <text/>
+    
+    token=</dc> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 <dc> 40 NativeWidget 5 ]
+    Action Reduce(6)
+    Reducing 1 symbols with rule VirtualWidget -> NativeWidget
+    
+    token=</dc> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 <dc> 40 VirtualWidget 47 ]
+    Action Shift(55)
+    
+    token=</dr> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 <dc> 40 VirtualWidget 47 </dc> 55 ]
+    Action Reduce(32)
+    Reducing 3 symbols with rule NativeTableData -> <dc> VirtualWidget </dc>
+    
+    token=</dr> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 NativeTableData 41 ]
+    Action Reduce(30)
+    Reducing 0 symbols with rule NativeTableDatas -> 
+    
+    token=</dr> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 NativeTableData 41 NativeTableDatas 48 ]
+    Action Reduce(31)
+    Reducing 2 symbols with rule NativeTableDatas -> NativeTableData NativeTableDatas
+    
+    token=</dr> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 NativeTableDatas 42 ]
+    Action Shift(49)
+    
+    token=</table> stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 NativeTableDatas 42 </dr> 49 ]
+    Action Shift(56)
+    
+    token=$ stack=[ 0 <table> 3 <hr> 11 NativeTableHeaders 18 </hr> 28 <dr> 35 NativeTableDatas 42 </dr> 49 </table> 56 ]
+    Action Reduce(26)
+    Reducing 8 symbols with rule NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>
+    
+    token=$ stack=[ 0 NativeWidget 5 ]
+    Action Reduce(6)
+    Reducing 1 symbols with rule VirtualWidget -> NativeWidget
+    
+    token=$ stack=[ 0 VirtualWidget 7 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    token=$ stack=[ 0 VirtualWidget 7 VirtualWidgets 13 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    token=$ stack=[ 0 VirtualWidgets 8 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule Screen -> VirtualWidgets
+    
+    token=$ stack=[ 0 Screen 6 ]
+    Action Accept
+    
+    Parse result:
+    Screen
+        VirtualWidgets
+            VirtualWidget
+                NativeWidget
+                    <table>
+                    <hr>
+                    NativeTableHeaders
+                        NativeTableHeader
+                            <hc>
+                            VirtualWidget
+                                NativeWidget
+                                    <expression/>
+                            </hc>
+                        NativeTableHeaders
+                    </hr>
+                    <dr>
+                    NativeTableDatas
+                        NativeTableData
+                            <dc>
+                            VirtualWidget
+                                NativeWidget
+                                    <text/>
+                            </dc>
+                        NativeTableDatas
+                    </dr>
+                    </table>
+            VirtualWidgets

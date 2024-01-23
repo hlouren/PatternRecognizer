@@ -1,0 +1,55 @@
+Testing "<text/> <expression/> <text/> <input/>" -> OK
+------------------
+    
+    token=<text/> stack=[ 0 ]
+    Action Shift(5)
+    
+    token=<expression/> stack=[ 0 <text/> 5 ]
+    Multiple actions found: Shift(14), Reduce(11)
+    Action Shift(14)
+    
+    configurationCount=1 token=<text/> stack=[ 0 <text/> 5 <expression/> 14 ]
+    Action Reduce(4)
+    Reducing 2 symbols with rule VirtualWidget -> <text/> <expression/>
+    
+    configurationCount=1 token=<text/> stack=[ 0 VirtualWidget 8 ]
+    Action Shift(5)
+    
+    configurationCount=1 token=<input/> stack=[ 0 VirtualWidget 8 <text/> 5 ]
+    Multiple actions found: Shift(15), Reduce(11)
+    Action Shift(15)
+    
+    configurationCount=2 token=$ stack=[ 0 VirtualWidget 8 <text/> 5 <input/> 15 ]
+    Action Reduce(6)
+    Reducing 2 symbols with rule VirtualWidget -> <text/> <input/>
+    
+    configurationCount=2 token=$ stack=[ 0 VirtualWidget 8 VirtualWidget 8 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    configurationCount=2 token=$ stack=[ 0 VirtualWidget 8 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    configurationCount=2 token=$ stack=[ 0 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    configurationCount=2 token=$ stack=[ 0 VirtualWidgets 9 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule Screen -> VirtualWidgets
+    
+    configurationCount=2 token=$ stack=[ 0 Screen 7 ]
+    Action Accept
+    
+    Parse result:
+    Screen
+        VirtualWidgets
+            ExprField.0
+                <text/>
+                <expression/>
+            VirtualWidgets
+                InputField.0
+                    <text/>
+                    <input/>
+                VirtualWidgets

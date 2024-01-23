@@ -1,0 +1,116 @@
+Testing "<table> <hr> <hc> <text/> </hc> </hr> <dr> <dc> <expression/> </dc> </dr> </table>" -> OK
+------------------
+    
+    token=<table> stack=[ 0 ]
+    Action Shift(3)
+    
+    token=<hr> stack=[ 0 <table> 3 ]
+    Action Shift(11)
+    
+    token=<hc> stack=[ 0 <table> 3 <hr> 11 ]
+    Action Shift(16)
+    
+    token=<text/> stack=[ 0 <table> 3 <hr> 11 <hc> 16 ]
+    Action Shift(23)
+    
+    token=</hc> stack=[ 0 <table> 3 <hr> 11 <hc> 16 <text/> 23 ]
+    Multiple actions found: Reduce(16), Reduce(23)
+    Action Reduce(16)
+    Reducing 1 symbols with rule LabelWidget -> <text/>
+    
+    configurationCount=1 token=</hc> stack=[ 0 <table> 3 <hr> 11 <hc> 16 LabelWidget 24 ]
+    Action Shift(33)
+    
+    configurationCount=1 token=</hr> stack=[ 0 <table> 3 <hr> 11 <hc> 16 LabelWidget 24 </hc> 33 ]
+    Action Reduce(10)
+    Reducing 3 symbols with rule TableHeader -> <hc> LabelWidget </hc>
+    
+    configurationCount=1 token=</hr> stack=[ 0 <table> 3 <hr> 11 TableHeader 19 ]
+    Action Reduce(8)
+    Reducing 0 symbols with rule TableHeaders -> 
+    
+    configurationCount=1 token=</hr> stack=[ 0 <table> 3 <hr> 11 TableHeader 19 TableHeaders 30 ]
+    Action Reduce(9)
+    Reducing 2 symbols with rule TableHeaders -> TableHeader TableHeaders
+    
+    configurationCount=1 token=</hr> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 ]
+    Action Shift(31)
+    
+    configurationCount=1 token=<dr> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 ]
+    Action Shift(38)
+    
+    configurationCount=1 token=<dc> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 <dr> 38 ]
+    Action Shift(44)
+    
+    configurationCount=1 token=<expression/> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 <dr> 38 <dc> 44 ]
+    Action Shift(51)
+    
+    configurationCount=1 token=</dc> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 <dr> 38 <dc> 44 <expression/> 51 ]
+    Action Reduce(20)
+    Reducing 1 symbols with rule DataWidget -> <expression/>
+    
+    configurationCount=1 token=</dc> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 <dr> 38 <dc> 44 DataWidget 52 ]
+    Action Shift(57)
+    
+    configurationCount=1 token=</dr> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 <dr> 38 <dc> 44 DataWidget 52 </dc> 57 ]
+    Action Reduce(13)
+    Reducing 3 symbols with rule TableData -> <dc> DataWidget </dc>
+    
+    configurationCount=1 token=</dr> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 <dr> 38 TableData 45 ]
+    Action Reduce(11)
+    Reducing 0 symbols with rule TableDatas -> 
+    
+    configurationCount=1 token=</dr> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 <dr> 38 TableData 45 TableDatas 53 ]
+    Action Reduce(12)
+    Reducing 2 symbols with rule TableDatas -> TableData TableDatas
+    
+    configurationCount=1 token=</dr> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 <dr> 38 TableDatas 46 ]
+    Action Shift(54)
+    
+    configurationCount=1 token=</table> stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 <dr> 38 TableDatas 46 </dr> 54 ]
+    Action Shift(58)
+    
+    configurationCount=1 token=$ stack=[ 0 <table> 3 <hr> 11 TableHeaders 20 </hr> 31 <dr> 38 TableDatas 46 </dr> 54 </table> 58 ]
+    Action Reduce(7)
+    Reducing 8 symbols with rule VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>
+    
+    configurationCount=1 token=$ stack=[ 0 VirtualWidget 7 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    configurationCount=1 token=$ stack=[ 0 VirtualWidget 7 VirtualWidgets 13 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    configurationCount=1 token=$ stack=[ 0 VirtualWidgets 8 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule Screen -> VirtualWidgets
+    
+    configurationCount=1 token=$ stack=[ 0 Screen 6 ]
+    Action Accept
+    
+    Parse result:
+    Screen
+        VirtualWidgets
+            Table.0
+                <table>
+                <hr>
+                TableHeaders
+                    TableHeader
+                        <hc>
+                        LText.0
+                            <text/>
+                        </hc>
+                    TableHeaders
+                </hr>
+                <dr>
+                TableDatas
+                    TableData
+                        <dc>
+                        DataExpr.0
+                            <expression/>
+                        </dc>
+                    TableDatas
+                </dr>
+                </table>
+            VirtualWidgets

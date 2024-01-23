@@ -1,0 +1,5 @@
+Testing "abcd" -> Error
+------------------
+    
+    token=abcd stack=[ 0 ]
+    Unexpected token abcd

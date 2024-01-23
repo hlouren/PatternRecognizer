@@ -1,0 +1,27 @@
+Actions
+    (0, <b>) -> Shift(1)
+    (1, <t/>) -> Shift({ unknown -> 3 ; abc -> 4 ; def -> 5 ; ghi -> 6 }) ; 1 classifiers
+    (2, $) -> Accept
+    (3, </b>) -> Shift(7)
+    (4, </b>) -> Shift(8)
+    (5, </b>) -> Shift(9)
+    (6, </b>) -> Shift(10)
+    (7, $) -> Reduce(4)
+    (8, $) -> Reduce(1), Reduce(4)
+    (9, $) -> Reduce(2), Reduce(4)
+    (10, $) -> Reduce(3), Reduce(4)
+
+Goto
+    (0, S) -> 2
+
+Rules
+    0: BigBang -> S
+    1: S -> <b> <t/>[Token.Value = "abc"] </b>
+    2: S -> <b> <t/>[Token.Value = "def"] </b>
+    3: S -> <b> <t/>[Token.Value = "ghi"] </b>
+    4: S -> <b> <t/> </b>
+
+Conflicts
+    (8, $) -> Reduce(1), Reduce(4)
+    (9, $) -> Reduce(2), Reduce(4)
+    (10, $) -> Reduce(3), Reduce(4)

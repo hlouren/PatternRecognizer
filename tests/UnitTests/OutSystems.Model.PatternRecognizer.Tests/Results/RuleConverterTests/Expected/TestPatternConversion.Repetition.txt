@@ -1,0 +1,3 @@
+Rep_0 -> 
+Rep_0 -> <ITextWidget> </ITextWidget> Rep_0
+[Texts.1] VirtualWidget -> Rep_0

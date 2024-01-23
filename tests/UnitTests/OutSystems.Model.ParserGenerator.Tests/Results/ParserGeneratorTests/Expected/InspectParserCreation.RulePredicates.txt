@@ -1,0 +1,80 @@
+Rules
+----------
+0: BigBang -> S
+1: S -> <b> <t/> </b>
+2: S -> <b> <t/> </b>
+
+RuleItems
+----------
+0: BigBang -> . S
+1: BigBang -> S .
+2: S -> . <b> <t/> </b>
+3: S -> <b> . <t/> </b>
+4: S -> <b> <t/> . </b>
+5: S -> <b> <t/> </b> .
+6: S -> . <b> <t/> </b>
+7: S -> <b> . <t/> </b>
+8: S -> <b> <t/> . </b>
+9: S -> <b> <t/> </b> .
+
+First
+----------
+BigBang: <b>
+S: <b>
+
+Follow
+----------
+BigBang: $
+S: $
+
+Created set 0: { BigBang -> . S, S -> . <b> <t/> </b>, S -> . <b> <t/> </b> }
+
+Processing state 0: { BigBang -> . S, S -> . <b> <t/> </b>, S -> . <b> <t/> </b> }
+    Token <b>
+        Created set 1: { S -> <b> . <t/> </b>, S -> <b> . <t/> </b> }
+        Created shift(1) on <b>
+        Created transition 0 -[<b>]-> 1
+    Token S
+        Created set 2: { BigBang -> S . }
+        Created goto(2) on S
+        Created transition 0 -[S]-> 2
+
+Processing state 1: { S -> <b> . <t/> </b>, S -> <b> . <t/> </b> }
+    Token <t/>
+        Created set 3: { S -> <b> <t/> . </b>, S -> <b> <t/> . </b> }
+        Created shift(3) on <t/>
+        Created transition 1 -[<t/>]-> 3
+
+Processing state 2: { BigBang -> S . }
+    Created accept
+
+Processing state 3: { S -> <b> <t/> . </b>, S -> <b> <t/> . </b> }
+    Token </b>
+        Created set 4: { S -> <b> <t/> </b> ., S -> <b> <t/> </b> . }
+        Created shift(4) on </b>
+        Created transition 3 -[</b>]-> 4
+
+Processing state 4: { S -> <b> <t/> </b> ., S -> <b> <t/> </b> . }
+    Created reduce(1) on $
+    Created reduce(2) on $
+
+Parser
+------
+
+    Actions
+        (0, <b>) -> Shift(1)
+        (1, <t/>) -> Shift(3)
+        (2, $) -> Accept
+        (3, </b>) -> Shift(4)
+        (4, $) -> Reduce(1), Reduce(2)
+    
+    Goto
+        (0, S) -> 2
+    
+    Rules
+        0: BigBang -> S
+        1: S -> <b> <t/> </b>
+        2: S -> <b> <t/> </b>
+    
+    Conflicts
+        (4, $) -> Reduce(1), Reduce(2)

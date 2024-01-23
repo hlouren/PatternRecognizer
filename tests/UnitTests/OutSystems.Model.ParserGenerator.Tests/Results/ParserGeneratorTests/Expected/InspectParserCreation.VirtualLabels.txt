@@ -1,0 +1,971 @@
+Rules
+----------
+0: BigBang -> Screen
+1: Screen -> VirtualWidgets
+2: VirtualWidgets -> 
+3: VirtualWidgets -> VirtualWidget VirtualWidgets
+4: VirtualWidget -> <text/> <expression/>
+5: VirtualWidget -> <label> <text/> </label> <expression/>
+6: VirtualWidget -> NativeWidget
+7: VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>
+8: TableHeaders -> 
+9: TableHeaders -> TableHeader TableHeaders
+10: TableHeader -> <hc> LabelWidget </hc>
+11: TableDatas -> 
+12: TableDatas -> TableData TableDatas
+13: TableData -> <dc> DataWidget </dc>
+14: LabelWidgets -> 
+15: LabelWidgets -> LabelWidget LabelWidgets
+16: LabelWidget -> <text/>
+17: LabelWidget -> <label> <text/> </label>
+18: DataWidgets -> 
+19: DataWidgets -> DataWidget DataWidgets
+20: DataWidget -> <expression/>
+21: NativeWidgets -> 
+22: NativeWidgets -> NativeWidget NativeWidgets
+23: NativeWidget -> <text/>
+24: NativeWidget -> <expression/>
+25: NativeWidget -> <label> VirtualWidgets </label>
+26: NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>
+27: NativeTableHeaders -> 
+28: NativeTableHeaders -> NativeTableHeader NativeTableHeaders
+29: NativeTableHeader -> <hc> VirtualWidget </hc>
+30: NativeTableDatas -> 
+31: NativeTableDatas -> NativeTableData NativeTableDatas
+32: NativeTableData -> <dc> VirtualWidget </dc>
+
+RuleItems
+----------
+0: BigBang -> . Screen
+1: BigBang -> Screen .
+2: Screen -> . VirtualWidgets
+3: Screen -> VirtualWidgets .
+4: VirtualWidgets -> .
+5: VirtualWidgets -> . VirtualWidget VirtualWidgets
+6: VirtualWidgets -> VirtualWidget . VirtualWidgets
+7: VirtualWidgets -> VirtualWidget VirtualWidgets .
+8: VirtualWidget -> . <text/> <expression/>
+9: VirtualWidget -> <text/> . <expression/>
+10: VirtualWidget -> <text/> <expression/> .
+11: VirtualWidget -> . <label> <text/> </label> <expression/>
+12: VirtualWidget -> <label> . <text/> </label> <expression/>
+13: VirtualWidget -> <label> <text/> . </label> <expression/>
+14: VirtualWidget -> <label> <text/> </label> . <expression/>
+15: VirtualWidget -> <label> <text/> </label> <expression/> .
+16: VirtualWidget -> . NativeWidget
+17: VirtualWidget -> NativeWidget .
+18: VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>
+19: VirtualWidget -> <table> . <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>
+20: VirtualWidget -> <table> <hr> . TableHeaders </hr> <dr> TableDatas </dr> </table>
+21: VirtualWidget -> <table> <hr> TableHeaders . </hr> <dr> TableDatas </dr> </table>
+22: VirtualWidget -> <table> <hr> TableHeaders </hr> . <dr> TableDatas </dr> </table>
+23: VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> . TableDatas </dr> </table>
+24: VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas . </dr> </table>
+25: VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> . </table>
+26: VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table> .
+27: TableHeaders -> .
+28: TableHeaders -> . TableHeader TableHeaders
+29: TableHeaders -> TableHeader . TableHeaders
+30: TableHeaders -> TableHeader TableHeaders .
+31: TableHeader -> . <hc> LabelWidget </hc>
+32: TableHeader -> <hc> . LabelWidget </hc>
+33: TableHeader -> <hc> LabelWidget . </hc>
+34: TableHeader -> <hc> LabelWidget </hc> .
+35: TableDatas -> .
+36: TableDatas -> . TableData TableDatas
+37: TableDatas -> TableData . TableDatas
+38: TableDatas -> TableData TableDatas .
+39: TableData -> . <dc> DataWidget </dc>
+40: TableData -> <dc> . DataWidget </dc>
+41: TableData -> <dc> DataWidget . </dc>
+42: TableData -> <dc> DataWidget </dc> .
+43: LabelWidgets -> .
+44: LabelWidgets -> . LabelWidget LabelWidgets
+45: LabelWidgets -> LabelWidget . LabelWidgets
+46: LabelWidgets -> LabelWidget LabelWidgets .
+47: LabelWidget -> . <text/>
+48: LabelWidget -> <text/> .
+49: LabelWidget -> . <label> <text/> </label>
+50: LabelWidget -> <label> . <text/> </label>
+51: LabelWidget -> <label> <text/> . </label>
+52: LabelWidget -> <label> <text/> </label> .
+53: DataWidgets -> .
+54: DataWidgets -> . DataWidget DataWidgets
+55: DataWidgets -> DataWidget . DataWidgets
+56: DataWidgets -> DataWidget DataWidgets .
+57: DataWidget -> . <expression/>
+58: DataWidget -> <expression/> .
+59: NativeWidgets -> .
+60: NativeWidgets -> . NativeWidget NativeWidgets
+61: NativeWidgets -> NativeWidget . NativeWidgets
+62: NativeWidgets -> NativeWidget NativeWidgets .
+63: NativeWidget -> . <text/>
+64: NativeWidget -> <text/> .
+65: NativeWidget -> . <expression/>
+66: NativeWidget -> <expression/> .
+67: NativeWidget -> . <label> VirtualWidgets </label>
+68: NativeWidget -> <label> . VirtualWidgets </label>
+69: NativeWidget -> <label> VirtualWidgets . </label>
+70: NativeWidget -> <label> VirtualWidgets </label> .
+71: NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>
+72: NativeWidget -> <table> . <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>
+73: NativeWidget -> <table> <hr> . NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>
+74: NativeWidget -> <table> <hr> NativeTableHeaders . </hr> <dr> NativeTableDatas </dr> </table>
+75: NativeWidget -> <table> <hr> NativeTableHeaders </hr> . <dr> NativeTableDatas </dr> </table>
+76: NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> . NativeTableDatas </dr> </table>
+77: NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas . </dr> </table>
+78: NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> . </table>
+79: NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> .
+80: NativeTableHeaders -> .
+81: NativeTableHeaders -> . NativeTableHeader NativeTableHeaders
+82: NativeTableHeaders -> NativeTableHeader . NativeTableHeaders
+83: NativeTableHeaders -> NativeTableHeader NativeTableHeaders .
+84: NativeTableHeader -> . <hc> VirtualWidget </hc>
+85: NativeTableHeader -> <hc> . VirtualWidget </hc>
+86: NativeTableHeader -> <hc> VirtualWidget . </hc>
+87: NativeTableHeader -> <hc> VirtualWidget </hc> .
+88: NativeTableDatas -> .
+89: NativeTableDatas -> . NativeTableData NativeTableDatas
+90: NativeTableDatas -> NativeTableData . NativeTableDatas
+91: NativeTableDatas -> NativeTableData NativeTableDatas .
+92: NativeTableData -> . <dc> VirtualWidget </dc>
+93: NativeTableData -> <dc> . VirtualWidget </dc>
+94: NativeTableData -> <dc> VirtualWidget . </dc>
+95: NativeTableData -> <dc> VirtualWidget </dc> .
+
+First
+----------
+BigBang: ε <expression/> <label> <table> <text/>
+DataWidget: <expression/>
+DataWidgets: ε <expression/>
+LabelWidget: <label> <text/>
+LabelWidgets: ε <label> <text/>
+NativeTableData: <dc>
+NativeTableDatas: ε <dc>
+NativeTableHeader: <hc>
+NativeTableHeaders: ε <hc>
+NativeWidget: <expression/> <label> <table> <text/>
+NativeWidgets: ε <expression/> <label> <table> <text/>
+Screen: ε <expression/> <label> <table> <text/>
+TableData: <dc>
+TableDatas: ε <dc>
+TableHeader: <hc>
+TableHeaders: ε <hc>
+VirtualWidget: <expression/> <label> <table> <text/>
+VirtualWidgets: ε <expression/> <label> <table> <text/>
+
+Follow
+----------
+BigBang: $
+DataWidget: </dc> <expression/>
+DataWidgets: 
+LabelWidget: </hc> <label> <text/>
+LabelWidgets: 
+NativeTableData: </dr> <dc>
+NativeTableDatas: </dr>
+NativeTableHeader: </hr> <hc>
+NativeTableHeaders: </hr>
+NativeWidget: </dc> </hc> </label> <expression/> <label> <table> <text/> $
+NativeWidgets: 
+Screen: $
+TableData: </dr> <dc>
+TableDatas: </dr>
+TableHeader: </hr> <hc>
+TableHeaders: </hr>
+VirtualWidget: </dc> </hc> </label> <expression/> <label> <table> <text/> $
+VirtualWidgets: </label> $
+
+Created set 0: { BigBang -> . Screen, Screen -> . VirtualWidgets, VirtualWidgets -> ., VirtualWidgets -> . VirtualWidget VirtualWidgets, VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> }
+
+Processing state 0: { BigBang -> . Screen, Screen -> . VirtualWidgets, VirtualWidgets -> ., VirtualWidgets -> . VirtualWidget VirtualWidgets, VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> }
+    Token <expression/>
+        Created set 1: { NativeWidget -> <expression/> . }
+        Created shift(1) on <expression/>
+        Created transition 0 -[<expression/>]-> 1
+    Token <label>
+        Created set 2: { VirtualWidgets -> ., VirtualWidgets -> . VirtualWidget VirtualWidgets, VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> <label> . <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> <label> . VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> }
+        Created shift(2) on <label>
+        Created transition 0 -[<label>]-> 2
+    Token <table>
+        Created set 3: { VirtualWidget -> <table> . <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> <table> . <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> }
+        Created shift(3) on <table>
+        Created transition 0 -[<table>]-> 3
+    Token <text/>
+        Created set 4: { VirtualWidget -> <text/> . <expression/>, NativeWidget -> <text/> . }
+        Created shift(4) on <text/>
+        Created transition 0 -[<text/>]-> 4
+    Token NativeWidget
+        Created set 5: { VirtualWidget -> NativeWidget . }
+        Created goto(5) on NativeWidget
+        Created transition 0 -[NativeWidget]-> 5
+    Token Screen
+        Created set 6: { BigBang -> Screen . }
+        Created goto(6) on Screen
+        Created transition 0 -[Screen]-> 6
+    Token VirtualWidget
+        Created set 7: { VirtualWidgets -> ., VirtualWidgets -> . VirtualWidget VirtualWidgets, VirtualWidgets -> VirtualWidget . VirtualWidgets, VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> }
+        Created goto(7) on VirtualWidget
+        Created transition 0 -[VirtualWidget]-> 7
+    Token VirtualWidgets
+        Created set 8: { Screen -> VirtualWidgets . }
+        Created goto(8) on VirtualWidgets
+        Created transition 0 -[VirtualWidgets]-> 8
+    Created reduce(2) on $, </label>
+
+Processing state 1: { NativeWidget -> <expression/> . }
+    Created reduce(24) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Processing state 2: { VirtualWidgets -> ., VirtualWidgets -> . VirtualWidget VirtualWidgets, VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> <label> . <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> <label> . VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> }
+    Token <expression/>
+        Created shift(1) on <expression/>
+        Created transition 2 -[<expression/>]-> 1
+    Token <label>
+        Created shift(2) on <label>
+        Created transition 2 -[<label>]-> 2
+    Token <table>
+        Created shift(3) on <table>
+        Created transition 2 -[<table>]-> 3
+    Token <text/>
+        Created set 9: { VirtualWidget -> <text/> . <expression/>, VirtualWidget -> <label> <text/> . </label> <expression/>, NativeWidget -> <text/> . }
+        Created shift(9) on <text/>
+        Created transition 2 -[<text/>]-> 9
+    Token NativeWidget
+        Created goto(5) on NativeWidget
+        Created transition 2 -[NativeWidget]-> 5
+    Token VirtualWidget
+        Created goto(7) on VirtualWidget
+        Created transition 2 -[VirtualWidget]-> 7
+    Token VirtualWidgets
+        Created set 10: { NativeWidget -> <label> VirtualWidgets . </label> }
+        Created goto(10) on VirtualWidgets
+        Created transition 2 -[VirtualWidgets]-> 10
+    Created reduce(2) on $, </label>
+
+Processing state 3: { VirtualWidget -> <table> . <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> <table> . <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> }
+    Token <hr>
+        Created set 11: { VirtualWidget -> <table> <hr> . TableHeaders </hr> <dr> TableDatas </dr> </table>, TableHeaders -> ., TableHeaders -> . TableHeader TableHeaders, TableHeader -> . <hc> LabelWidget </hc>, NativeWidget -> <table> <hr> . NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>, NativeTableHeaders -> ., NativeTableHeaders -> . NativeTableHeader NativeTableHeaders, NativeTableHeader -> . <hc> VirtualWidget </hc> }
+        Created shift(11) on <hr>
+        Created transition 3 -[<hr>]-> 11
+
+Processing state 4: { VirtualWidget -> <text/> . <expression/>, NativeWidget -> <text/> . }
+    Token <expression/>
+        Created set 12: { VirtualWidget -> <text/> <expression/> . }
+        Created shift(12) on <expression/>
+        Created transition 4 -[<expression/>]-> 12
+    Created reduce(23) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Processing state 5: { VirtualWidget -> NativeWidget . }
+    Created reduce(6) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Processing state 6: { BigBang -> Screen . }
+    Created accept
+
+Processing state 7: { VirtualWidgets -> ., VirtualWidgets -> . VirtualWidget VirtualWidgets, VirtualWidgets -> VirtualWidget . VirtualWidgets, VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> }
+    Token <expression/>
+        Created shift(1) on <expression/>
+        Created transition 7 -[<expression/>]-> 1
+    Token <label>
+        Created shift(2) on <label>
+        Created transition 7 -[<label>]-> 2
+    Token <table>
+        Created shift(3) on <table>
+        Created transition 7 -[<table>]-> 3
+    Token <text/>
+        Created shift(4) on <text/>
+        Created transition 7 -[<text/>]-> 4
+    Token NativeWidget
+        Created goto(5) on NativeWidget
+        Created transition 7 -[NativeWidget]-> 5
+    Token VirtualWidget
+        Created goto(7) on VirtualWidget
+        Created transition 7 -[VirtualWidget]-> 7
+    Token VirtualWidgets
+        Created set 13: { VirtualWidgets -> VirtualWidget VirtualWidgets . }
+        Created goto(13) on VirtualWidgets
+        Created transition 7 -[VirtualWidgets]-> 13
+    Created reduce(2) on $, </label>
+
+Processing state 8: { Screen -> VirtualWidgets . }
+    Created reduce(1) on $
+
+Processing state 9: { VirtualWidget -> <text/> . <expression/>, VirtualWidget -> <label> <text/> . </label> <expression/>, NativeWidget -> <text/> . }
+    Token </label>
+        Created set 14: { VirtualWidget -> <label> <text/> </label> . <expression/> }
+        Created shift(14) on </label>
+        Created transition 9 -[</label>]-> 14
+    Token <expression/>
+        Created shift(12) on <expression/>
+        Created transition 9 -[<expression/>]-> 12
+    Created reduce(23) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Processing state 10: { NativeWidget -> <label> VirtualWidgets . </label> }
+    Token </label>
+        Created set 15: { NativeWidget -> <label> VirtualWidgets </label> . }
+        Created shift(15) on </label>
+        Created transition 10 -[</label>]-> 15
+
+Processing state 11: { VirtualWidget -> <table> <hr> . TableHeaders </hr> <dr> TableDatas </dr> </table>, TableHeaders -> ., TableHeaders -> . TableHeader TableHeaders, TableHeader -> . <hc> LabelWidget </hc>, NativeWidget -> <table> <hr> . NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>, NativeTableHeaders -> ., NativeTableHeaders -> . NativeTableHeader NativeTableHeaders, NativeTableHeader -> . <hc> VirtualWidget </hc> }
+    Token <hc>
+        Created set 16: { VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, TableHeader -> <hc> . LabelWidget </hc>, LabelWidget -> . <text/>, LabelWidget -> . <label> <text/> </label>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>, NativeTableHeader -> <hc> . VirtualWidget </hc> }
+        Created shift(16) on <hc>
+        Created transition 11 -[<hc>]-> 16
+    Token NativeTableHeader
+        Created set 17: { NativeTableHeaders -> ., NativeTableHeaders -> . NativeTableHeader NativeTableHeaders, NativeTableHeaders -> NativeTableHeader . NativeTableHeaders, NativeTableHeader -> . <hc> VirtualWidget </hc> }
+        Created goto(17) on NativeTableHeader
+        Created transition 11 -[NativeTableHeader]-> 17
+    Token NativeTableHeaders
+        Created set 18: { NativeWidget -> <table> <hr> NativeTableHeaders . </hr> <dr> NativeTableDatas </dr> </table> }
+        Created goto(18) on NativeTableHeaders
+        Created transition 11 -[NativeTableHeaders]-> 18
+    Token TableHeader
+        Created set 19: { TableHeaders -> ., TableHeaders -> . TableHeader TableHeaders, TableHeaders -> TableHeader . TableHeaders, TableHeader -> . <hc> LabelWidget </hc> }
+        Created goto(19) on TableHeader
+        Created transition 11 -[TableHeader]-> 19
+    Token TableHeaders
+        Created set 20: { VirtualWidget -> <table> <hr> TableHeaders . </hr> <dr> TableDatas </dr> </table> }
+        Created goto(20) on TableHeaders
+        Created transition 11 -[TableHeaders]-> 20
+    Created reduce(8) on </hr>
+    Created reduce(27) on </hr>
+
+Processing state 12: { VirtualWidget -> <text/> <expression/> . }
+    Created reduce(4) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Processing state 13: { VirtualWidgets -> VirtualWidget VirtualWidgets . }
+    Created reduce(3) on $, </label>
+
+Processing state 14: { VirtualWidget -> <label> <text/> </label> . <expression/> }
+    Token <expression/>
+        Created set 21: { VirtualWidget -> <label> <text/> </label> <expression/> . }
+        Created shift(21) on <expression/>
+        Created transition 14 -[<expression/>]-> 21
+
+Processing state 15: { NativeWidget -> <label> VirtualWidgets </label> . }
+    Created reduce(25) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Processing state 16: { VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, TableHeader -> <hc> . LabelWidget </hc>, LabelWidget -> . <text/>, LabelWidget -> . <label> <text/> </label>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>, NativeTableHeader -> <hc> . VirtualWidget </hc> }
+    Token <expression/>
+        Created shift(1) on <expression/>
+        Created transition 16 -[<expression/>]-> 1
+    Token <label>
+        Created set 22: { VirtualWidgets -> ., VirtualWidgets -> . VirtualWidget VirtualWidgets, VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> <label> . <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, LabelWidget -> <label> . <text/> </label>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> <label> . VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> }
+        Created shift(22) on <label>
+        Created transition 16 -[<label>]-> 22
+    Token <table>
+        Created shift(3) on <table>
+        Created transition 16 -[<table>]-> 3
+    Token <text/>
+        Created set 23: { VirtualWidget -> <text/> . <expression/>, LabelWidget -> <text/> ., NativeWidget -> <text/> . }
+        Created shift(23) on <text/>
+        Created transition 16 -[<text/>]-> 23
+    Token LabelWidget
+        Created set 24: { TableHeader -> <hc> LabelWidget . </hc> }
+        Created goto(24) on LabelWidget
+        Created transition 16 -[LabelWidget]-> 24
+    Token NativeWidget
+        Created goto(5) on NativeWidget
+        Created transition 16 -[NativeWidget]-> 5
+    Token VirtualWidget
+        Created set 25: { NativeTableHeader -> <hc> VirtualWidget . </hc> }
+        Created goto(25) on VirtualWidget
+        Created transition 16 -[VirtualWidget]-> 25
+
+Processing state 17: { NativeTableHeaders -> ., NativeTableHeaders -> . NativeTableHeader NativeTableHeaders, NativeTableHeaders -> NativeTableHeader . NativeTableHeaders, NativeTableHeader -> . <hc> VirtualWidget </hc> }
+    Token <hc>
+        Created set 26: { VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>, NativeTableHeader -> <hc> . VirtualWidget </hc> }
+        Created shift(26) on <hc>
+        Created transition 17 -[<hc>]-> 26
+    Token NativeTableHeader
+        Created goto(17) on NativeTableHeader
+        Created transition 17 -[NativeTableHeader]-> 17
+    Token NativeTableHeaders
+        Created set 27: { NativeTableHeaders -> NativeTableHeader NativeTableHeaders . }
+        Created goto(27) on NativeTableHeaders
+        Created transition 17 -[NativeTableHeaders]-> 27
+    Created reduce(27) on </hr>
+
+Processing state 18: { NativeWidget -> <table> <hr> NativeTableHeaders . </hr> <dr> NativeTableDatas </dr> </table> }
+    Token </hr>
+        Created set 28: { NativeWidget -> <table> <hr> NativeTableHeaders </hr> . <dr> NativeTableDatas </dr> </table> }
+        Created shift(28) on </hr>
+        Created transition 18 -[</hr>]-> 28
+
+Processing state 19: { TableHeaders -> ., TableHeaders -> . TableHeader TableHeaders, TableHeaders -> TableHeader . TableHeaders, TableHeader -> . <hc> LabelWidget </hc> }
+    Token <hc>
+        Created set 29: { TableHeader -> <hc> . LabelWidget </hc>, LabelWidget -> . <text/>, LabelWidget -> . <label> <text/> </label> }
+        Created shift(29) on <hc>
+        Created transition 19 -[<hc>]-> 29
+    Token TableHeader
+        Created goto(19) on TableHeader
+        Created transition 19 -[TableHeader]-> 19
+    Token TableHeaders
+        Created set 30: { TableHeaders -> TableHeader TableHeaders . }
+        Created goto(30) on TableHeaders
+        Created transition 19 -[TableHeaders]-> 30
+    Created reduce(8) on </hr>
+
+Processing state 20: { VirtualWidget -> <table> <hr> TableHeaders . </hr> <dr> TableDatas </dr> </table> }
+    Token </hr>
+        Created set 31: { VirtualWidget -> <table> <hr> TableHeaders </hr> . <dr> TableDatas </dr> </table> }
+        Created shift(31) on </hr>
+        Created transition 20 -[</hr>]-> 31
+
+Processing state 21: { VirtualWidget -> <label> <text/> </label> <expression/> . }
+    Created reduce(5) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Processing state 22: { VirtualWidgets -> ., VirtualWidgets -> . VirtualWidget VirtualWidgets, VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> <label> . <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, LabelWidget -> <label> . <text/> </label>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> <label> . VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> }
+    Token <expression/>
+        Created shift(1) on <expression/>
+        Created transition 22 -[<expression/>]-> 1
+    Token <label>
+        Created shift(2) on <label>
+        Created transition 22 -[<label>]-> 2
+    Token <table>
+        Created shift(3) on <table>
+        Created transition 22 -[<table>]-> 3
+    Token <text/>
+        Created set 32: { VirtualWidget -> <text/> . <expression/>, VirtualWidget -> <label> <text/> . </label> <expression/>, LabelWidget -> <label> <text/> . </label>, NativeWidget -> <text/> . }
+        Created shift(32) on <text/>
+        Created transition 22 -[<text/>]-> 32
+    Token NativeWidget
+        Created goto(5) on NativeWidget
+        Created transition 22 -[NativeWidget]-> 5
+    Token VirtualWidget
+        Created goto(7) on VirtualWidget
+        Created transition 22 -[VirtualWidget]-> 7
+    Token VirtualWidgets
+        Created goto(10) on VirtualWidgets
+        Created transition 22 -[VirtualWidgets]-> 10
+    Created reduce(2) on $, </label>
+
+Processing state 23: { VirtualWidget -> <text/> . <expression/>, LabelWidget -> <text/> ., NativeWidget -> <text/> . }
+    Token <expression/>
+        Created shift(12) on <expression/>
+        Created transition 23 -[<expression/>]-> 12
+    Created reduce(16) on </hc>, <text/>, <label>
+    Created reduce(23) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Processing state 24: { TableHeader -> <hc> LabelWidget . </hc> }
+    Token </hc>
+        Created set 33: { TableHeader -> <hc> LabelWidget </hc> . }
+        Created shift(33) on </hc>
+        Created transition 24 -[</hc>]-> 33
+
+Processing state 25: { NativeTableHeader -> <hc> VirtualWidget . </hc> }
+    Token </hc>
+        Created set 34: { NativeTableHeader -> <hc> VirtualWidget </hc> . }
+        Created shift(34) on </hc>
+        Created transition 25 -[</hc>]-> 34
+
+Processing state 26: { VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>, NativeTableHeader -> <hc> . VirtualWidget </hc> }
+    Token <expression/>
+        Created shift(1) on <expression/>
+        Created transition 26 -[<expression/>]-> 1
+    Token <label>
+        Created shift(2) on <label>
+        Created transition 26 -[<label>]-> 2
+    Token <table>
+        Created shift(3) on <table>
+        Created transition 26 -[<table>]-> 3
+    Token <text/>
+        Created shift(4) on <text/>
+        Created transition 26 -[<text/>]-> 4
+    Token NativeWidget
+        Created goto(5) on NativeWidget
+        Created transition 26 -[NativeWidget]-> 5
+    Token VirtualWidget
+        Created goto(25) on VirtualWidget
+        Created transition 26 -[VirtualWidget]-> 25
+
+Processing state 27: { NativeTableHeaders -> NativeTableHeader NativeTableHeaders . }
+    Created reduce(28) on </hr>
+
+Processing state 28: { NativeWidget -> <table> <hr> NativeTableHeaders </hr> . <dr> NativeTableDatas </dr> </table> }
+    Token <dr>
+        Created set 35: { NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> . NativeTableDatas </dr> </table>, NativeTableDatas -> ., NativeTableDatas -> . NativeTableData NativeTableDatas, NativeTableData -> . <dc> VirtualWidget </dc> }
+        Created shift(35) on <dr>
+        Created transition 28 -[<dr>]-> 35
+
+Processing state 29: { TableHeader -> <hc> . LabelWidget </hc>, LabelWidget -> . <text/>, LabelWidget -> . <label> <text/> </label> }
+    Token <label>
+        Created set 36: { LabelWidget -> <label> . <text/> </label> }
+        Created shift(36) on <label>
+        Created transition 29 -[<label>]-> 36
+    Token <text/>
+        Created set 37: { LabelWidget -> <text/> . }
+        Created shift(37) on <text/>
+        Created transition 29 -[<text/>]-> 37
+    Token LabelWidget
+        Created goto(24) on LabelWidget
+        Created transition 29 -[LabelWidget]-> 24
+
+Processing state 30: { TableHeaders -> TableHeader TableHeaders . }
+    Created reduce(9) on </hr>
+
+Processing state 31: { VirtualWidget -> <table> <hr> TableHeaders </hr> . <dr> TableDatas </dr> </table> }
+    Token <dr>
+        Created set 38: { VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> . TableDatas </dr> </table>, TableDatas -> ., TableDatas -> . TableData TableDatas, TableData -> . <dc> DataWidget </dc> }
+        Created shift(38) on <dr>
+        Created transition 31 -[<dr>]-> 38
+
+Processing state 32: { VirtualWidget -> <text/> . <expression/>, VirtualWidget -> <label> <text/> . </label> <expression/>, LabelWidget -> <label> <text/> . </label>, NativeWidget -> <text/> . }
+    Token </label>
+        Created set 39: { VirtualWidget -> <label> <text/> </label> . <expression/>, LabelWidget -> <label> <text/> </label> . }
+        Created shift(39) on </label>
+        Created transition 32 -[</label>]-> 39
+    Token <expression/>
+        Created shift(12) on <expression/>
+        Created transition 32 -[<expression/>]-> 12
+    Created reduce(23) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Processing state 33: { TableHeader -> <hc> LabelWidget </hc> . }
+    Created reduce(10) on <hc>, </hr>
+
+Processing state 34: { NativeTableHeader -> <hc> VirtualWidget </hc> . }
+    Created reduce(29) on <hc>, </hr>
+
+Processing state 35: { NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> . NativeTableDatas </dr> </table>, NativeTableDatas -> ., NativeTableDatas -> . NativeTableData NativeTableDatas, NativeTableData -> . <dc> VirtualWidget </dc> }
+    Token <dc>
+        Created set 40: { VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>, NativeTableData -> <dc> . VirtualWidget </dc> }
+        Created shift(40) on <dc>
+        Created transition 35 -[<dc>]-> 40
+    Token NativeTableData
+        Created set 41: { NativeTableDatas -> ., NativeTableDatas -> . NativeTableData NativeTableDatas, NativeTableDatas -> NativeTableData . NativeTableDatas, NativeTableData -> . <dc> VirtualWidget </dc> }
+        Created goto(41) on NativeTableData
+        Created transition 35 -[NativeTableData]-> 41
+    Token NativeTableDatas
+        Created set 42: { NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas . </dr> </table> }
+        Created goto(42) on NativeTableDatas
+        Created transition 35 -[NativeTableDatas]-> 42
+    Created reduce(30) on </dr>
+
+Processing state 36: { LabelWidget -> <label> . <text/> </label> }
+    Token <text/>
+        Created set 43: { LabelWidget -> <label> <text/> . </label> }
+        Created shift(43) on <text/>
+        Created transition 36 -[<text/>]-> 43
+
+Processing state 37: { LabelWidget -> <text/> . }
+    Created reduce(16) on </hc>, <text/>, <label>
+
+Processing state 38: { VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> . TableDatas </dr> </table>, TableDatas -> ., TableDatas -> . TableData TableDatas, TableData -> . <dc> DataWidget </dc> }
+    Token <dc>
+        Created set 44: { TableData -> <dc> . DataWidget </dc>, DataWidget -> . <expression/> }
+        Created shift(44) on <dc>
+        Created transition 38 -[<dc>]-> 44
+    Token TableData
+        Created set 45: { TableDatas -> ., TableDatas -> . TableData TableDatas, TableDatas -> TableData . TableDatas, TableData -> . <dc> DataWidget </dc> }
+        Created goto(45) on TableData
+        Created transition 38 -[TableData]-> 45
+    Token TableDatas
+        Created set 46: { VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas . </dr> </table> }
+        Created goto(46) on TableDatas
+        Created transition 38 -[TableDatas]-> 46
+    Created reduce(11) on </dr>
+
+Processing state 39: { VirtualWidget -> <label> <text/> </label> . <expression/>, LabelWidget -> <label> <text/> </label> . }
+    Token <expression/>
+        Created shift(21) on <expression/>
+        Created transition 39 -[<expression/>]-> 21
+    Created reduce(17) on </hc>, <text/>, <label>
+
+Processing state 40: { VirtualWidget -> . <text/> <expression/>, VirtualWidget -> . <label> <text/> </label> <expression/>, VirtualWidget -> . NativeWidget, VirtualWidget -> . <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>, NativeWidget -> . <text/>, NativeWidget -> . <expression/>, NativeWidget -> . <label> VirtualWidgets </label>, NativeWidget -> . <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>, NativeTableData -> <dc> . VirtualWidget </dc> }
+    Token <expression/>
+        Created shift(1) on <expression/>
+        Created transition 40 -[<expression/>]-> 1
+    Token <label>
+        Created shift(2) on <label>
+        Created transition 40 -[<label>]-> 2
+    Token <table>
+        Created shift(3) on <table>
+        Created transition 40 -[<table>]-> 3
+    Token <text/>
+        Created shift(4) on <text/>
+        Created transition 40 -[<text/>]-> 4
+    Token NativeWidget
+        Created goto(5) on NativeWidget
+        Created transition 40 -[NativeWidget]-> 5
+    Token VirtualWidget
+        Created set 47: { NativeTableData -> <dc> VirtualWidget . </dc> }
+        Created goto(47) on VirtualWidget
+        Created transition 40 -[VirtualWidget]-> 47
+
+Processing state 41: { NativeTableDatas -> ., NativeTableDatas -> . NativeTableData NativeTableDatas, NativeTableDatas -> NativeTableData . NativeTableDatas, NativeTableData -> . <dc> VirtualWidget </dc> }
+    Token <dc>
+        Created shift(40) on <dc>
+        Created transition 41 -[<dc>]-> 40
+    Token NativeTableData
+        Created goto(41) on NativeTableData
+        Created transition 41 -[NativeTableData]-> 41
+    Token NativeTableDatas
+        Created set 48: { NativeTableDatas -> NativeTableData NativeTableDatas . }
+        Created goto(48) on NativeTableDatas
+        Created transition 41 -[NativeTableDatas]-> 48
+    Created reduce(30) on </dr>
+
+Processing state 42: { NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas . </dr> </table> }
+    Token </dr>
+        Created set 49: { NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> . </table> }
+        Created shift(49) on </dr>
+        Created transition 42 -[</dr>]-> 49
+
+Processing state 43: { LabelWidget -> <label> <text/> . </label> }
+    Token </label>
+        Created set 50: { LabelWidget -> <label> <text/> </label> . }
+        Created shift(50) on </label>
+        Created transition 43 -[</label>]-> 50
+
+Processing state 44: { TableData -> <dc> . DataWidget </dc>, DataWidget -> . <expression/> }
+    Token <expression/>
+        Created set 51: { DataWidget -> <expression/> . }
+        Created shift(51) on <expression/>
+        Created transition 44 -[<expression/>]-> 51
+    Token DataWidget
+        Created set 52: { TableData -> <dc> DataWidget . </dc> }
+        Created goto(52) on DataWidget
+        Created transition 44 -[DataWidget]-> 52
+
+Processing state 45: { TableDatas -> ., TableDatas -> . TableData TableDatas, TableDatas -> TableData . TableDatas, TableData -> . <dc> DataWidget </dc> }
+    Token <dc>
+        Created shift(44) on <dc>
+        Created transition 45 -[<dc>]-> 44
+    Token TableData
+        Created goto(45) on TableData
+        Created transition 45 -[TableData]-> 45
+    Token TableDatas
+        Created set 53: { TableDatas -> TableData TableDatas . }
+        Created goto(53) on TableDatas
+        Created transition 45 -[TableDatas]-> 53
+    Created reduce(11) on </dr>
+
+Processing state 46: { VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas . </dr> </table> }
+    Token </dr>
+        Created set 54: { VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> . </table> }
+        Created shift(54) on </dr>
+        Created transition 46 -[</dr>]-> 54
+
+Processing state 47: { NativeTableData -> <dc> VirtualWidget . </dc> }
+    Token </dc>
+        Created set 55: { NativeTableData -> <dc> VirtualWidget </dc> . }
+        Created shift(55) on </dc>
+        Created transition 47 -[</dc>]-> 55
+
+Processing state 48: { NativeTableDatas -> NativeTableData NativeTableDatas . }
+    Created reduce(31) on </dr>
+
+Processing state 49: { NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> . </table> }
+    Token </table>
+        Created set 56: { NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> . }
+        Created shift(56) on </table>
+        Created transition 49 -[</table>]-> 56
+
+Processing state 50: { LabelWidget -> <label> <text/> </label> . }
+    Created reduce(17) on </hc>, <text/>, <label>
+
+Processing state 51: { DataWidget -> <expression/> . }
+    Created reduce(20) on </dc>, <expression/>
+
+Processing state 52: { TableData -> <dc> DataWidget . </dc> }
+    Token </dc>
+        Created set 57: { TableData -> <dc> DataWidget </dc> . }
+        Created shift(57) on </dc>
+        Created transition 52 -[</dc>]-> 57
+
+Processing state 53: { TableDatas -> TableData TableDatas . }
+    Created reduce(12) on </dr>
+
+Processing state 54: { VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> . </table> }
+    Token </table>
+        Created set 58: { VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table> . }
+        Created shift(58) on </table>
+        Created transition 54 -[</table>]-> 58
+
+Processing state 55: { NativeTableData -> <dc> VirtualWidget </dc> . }
+    Created reduce(32) on <dc>, </dr>
+
+Processing state 56: { NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table> . }
+    Created reduce(26) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Processing state 57: { TableData -> <dc> DataWidget </dc> . }
+    Created reduce(13) on <dc>, </dr>
+
+Processing state 58: { VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table> . }
+    Created reduce(7) on <text/>, <label>, <table>, <expression/>, $, </hc>, </dc>, </label>
+
+Parser
+------
+
+    Actions
+        (0, </label>) -> Reduce(2)
+        (0, <expression/>) -> Shift(1)
+        (0, <label>) -> Shift(2)
+        (0, <table>) -> Shift(3)
+        (0, <text/>) -> Shift(4)
+        (0, $) -> Reduce(2)
+        (1, </dc>) -> Reduce(24)
+        (1, </hc>) -> Reduce(24)
+        (1, </label>) -> Reduce(24)
+        (1, <expression/>) -> Reduce(24)
+        (1, <label>) -> Reduce(24)
+        (1, <table>) -> Reduce(24)
+        (1, <text/>) -> Reduce(24)
+        (1, $) -> Reduce(24)
+        (2, </label>) -> Reduce(2)
+        (2, <expression/>) -> Shift(1)
+        (2, <label>) -> Shift(2)
+        (2, <table>) -> Shift(3)
+        (2, <text/>) -> Shift(9)
+        (2, $) -> Reduce(2)
+        (3, <hr>) -> Shift(11)
+        (4, </dc>) -> Reduce(23)
+        (4, </hc>) -> Reduce(23)
+        (4, </label>) -> Reduce(23)
+        (4, <expression/>) -> Shift(12), Reduce(23)
+        (4, <label>) -> Reduce(23)
+        (4, <table>) -> Reduce(23)
+        (4, <text/>) -> Reduce(23)
+        (4, $) -> Reduce(23)
+        (5, </dc>) -> Reduce(6)
+        (5, </hc>) -> Reduce(6)
+        (5, </label>) -> Reduce(6)
+        (5, <expression/>) -> Reduce(6)
+        (5, <label>) -> Reduce(6)
+        (5, <table>) -> Reduce(6)
+        (5, <text/>) -> Reduce(6)
+        (5, $) -> Reduce(6)
+        (6, $) -> Accept
+        (7, </label>) -> Reduce(2)
+        (7, <expression/>) -> Shift(1)
+        (7, <label>) -> Shift(2)
+        (7, <table>) -> Shift(3)
+        (7, <text/>) -> Shift(4)
+        (7, $) -> Reduce(2)
+        (8, $) -> Reduce(1)
+        (9, </dc>) -> Reduce(23)
+        (9, </hc>) -> Reduce(23)
+        (9, </label>) -> Shift(14), Reduce(23)
+        (9, <expression/>) -> Shift(12), Reduce(23)
+        (9, <label>) -> Reduce(23)
+        (9, <table>) -> Reduce(23)
+        (9, <text/>) -> Reduce(23)
+        (9, $) -> Reduce(23)
+        (10, </label>) -> Shift(15)
+        (11, </hr>) -> Reduce(8), Reduce(27)
+        (11, <hc>) -> Shift(16)
+        (12, </dc>) -> Reduce(4)
+        (12, </hc>) -> Reduce(4)
+        (12, </label>) -> Reduce(4)
+        (12, <expression/>) -> Reduce(4)
+        (12, <label>) -> Reduce(4)
+        (12, <table>) -> Reduce(4)
+        (12, <text/>) -> Reduce(4)
+        (12, $) -> Reduce(4)
+        (13, </label>) -> Reduce(3)
+        (13, $) -> Reduce(3)
+        (14, <expression/>) -> Shift(21)
+        (15, </dc>) -> Reduce(25)
+        (15, </hc>) -> Reduce(25)
+        (15, </label>) -> Reduce(25)
+        (15, <expression/>) -> Reduce(25)
+        (15, <label>) -> Reduce(25)
+        (15, <table>) -> Reduce(25)
+        (15, <text/>) -> Reduce(25)
+        (15, $) -> Reduce(25)
+        (16, <expression/>) -> Shift(1)
+        (16, <label>) -> Shift(22)
+        (16, <table>) -> Shift(3)
+        (16, <text/>) -> Shift(23)
+        (17, </hr>) -> Reduce(27)
+        (17, <hc>) -> Shift(26)
+        (18, </hr>) -> Shift(28)
+        (19, </hr>) -> Reduce(8)
+        (19, <hc>) -> Shift(29)
+        (20, </hr>) -> Shift(31)
+        (21, </dc>) -> Reduce(5)
+        (21, </hc>) -> Reduce(5)
+        (21, </label>) -> Reduce(5)
+        (21, <expression/>) -> Reduce(5)
+        (21, <label>) -> Reduce(5)
+        (21, <table>) -> Reduce(5)
+        (21, <text/>) -> Reduce(5)
+        (21, $) -> Reduce(5)
+        (22, </label>) -> Reduce(2)
+        (22, <expression/>) -> Shift(1)
+        (22, <label>) -> Shift(2)
+        (22, <table>) -> Shift(3)
+        (22, <text/>) -> Shift(32)
+        (22, $) -> Reduce(2)
+        (23, </dc>) -> Reduce(23)
+        (23, </hc>) -> Reduce(16), Reduce(23)
+        (23, </label>) -> Reduce(23)
+        (23, <expression/>) -> Shift(12), Reduce(23)
+        (23, <label>) -> Reduce(16), Reduce(23)
+        (23, <table>) -> Reduce(23)
+        (23, <text/>) -> Reduce(16), Reduce(23)
+        (23, $) -> Reduce(23)
+        (24, </hc>) -> Shift(33)
+        (25, </hc>) -> Shift(34)
+        (26, <expression/>) -> Shift(1)
+        (26, <label>) -> Shift(2)
+        (26, <table>) -> Shift(3)
+        (26, <text/>) -> Shift(4)
+        (27, </hr>) -> Reduce(28)
+        (28, <dr>) -> Shift(35)
+        (29, <label>) -> Shift(36)
+        (29, <text/>) -> Shift(37)
+        (30, </hr>) -> Reduce(9)
+        (31, <dr>) -> Shift(38)
+        (32, </dc>) -> Reduce(23)
+        (32, </hc>) -> Reduce(23)
+        (32, </label>) -> Shift(39), Reduce(23)
+        (32, <expression/>) -> Shift(12), Reduce(23)
+        (32, <label>) -> Reduce(23)
+        (32, <table>) -> Reduce(23)
+        (32, <text/>) -> Reduce(23)
+        (32, $) -> Reduce(23)
+        (33, </hr>) -> Reduce(10)
+        (33, <hc>) -> Reduce(10)
+        (34, </hr>) -> Reduce(29)
+        (34, <hc>) -> Reduce(29)
+        (35, </dr>) -> Reduce(30)
+        (35, <dc>) -> Shift(40)
+        (36, <text/>) -> Shift(43)
+        (37, </hc>) -> Reduce(16)
+        (37, <label>) -> Reduce(16)
+        (37, <text/>) -> Reduce(16)
+        (38, </dr>) -> Reduce(11)
+        (38, <dc>) -> Shift(44)
+        (39, </hc>) -> Reduce(17)
+        (39, <expression/>) -> Shift(21)
+        (39, <label>) -> Reduce(17)
+        (39, <text/>) -> Reduce(17)
+        (40, <expression/>) -> Shift(1)
+        (40, <label>) -> Shift(2)
+        (40, <table>) -> Shift(3)
+        (40, <text/>) -> Shift(4)
+        (41, </dr>) -> Reduce(30)
+        (41, <dc>) -> Shift(40)
+        (42, </dr>) -> Shift(49)
+        (43, </label>) -> Shift(50)
+        (44, <expression/>) -> Shift(51)
+        (45, </dr>) -> Reduce(11)
+        (45, <dc>) -> Shift(44)
+        (46, </dr>) -> Shift(54)
+        (47, </dc>) -> Shift(55)
+        (48, </dr>) -> Reduce(31)
+        (49, </table>) -> Shift(56)
+        (50, </hc>) -> Reduce(17)
+        (50, <label>) -> Reduce(17)
+        (50, <text/>) -> Reduce(17)
+        (51, </dc>) -> Reduce(20)
+        (51, <expression/>) -> Reduce(20)
+        (52, </dc>) -> Shift(57)
+        (53, </dr>) -> Reduce(12)
+        (54, </table>) -> Shift(58)
+        (55, </dr>) -> Reduce(32)
+        (55, <dc>) -> Reduce(32)
+        (56, </dc>) -> Reduce(26)
+        (56, </hc>) -> Reduce(26)
+        (56, </label>) -> Reduce(26)
+        (56, <expression/>) -> Reduce(26)
+        (56, <label>) -> Reduce(26)
+        (56, <table>) -> Reduce(26)
+        (56, <text/>) -> Reduce(26)
+        (56, $) -> Reduce(26)
+        (57, </dr>) -> Reduce(13)
+        (57, <dc>) -> Reduce(13)
+        (58, </dc>) -> Reduce(7)
+        (58, </hc>) -> Reduce(7)
+        (58, </label>) -> Reduce(7)
+        (58, <expression/>) -> Reduce(7)
+        (58, <label>) -> Reduce(7)
+        (58, <table>) -> Reduce(7)
+        (58, <text/>) -> Reduce(7)
+        (58, $) -> Reduce(7)
+    
+    Goto
+        (0, NativeWidget) -> 5
+        (0, Screen) -> 6
+        (0, VirtualWidget) -> 7
+        (0, VirtualWidgets) -> 8
+        (2, NativeWidget) -> 5
+        (2, VirtualWidget) -> 7
+        (2, VirtualWidgets) -> 10
+        (7, NativeWidget) -> 5
+        (7, VirtualWidget) -> 7
+        (7, VirtualWidgets) -> 13
+        (11, NativeTableHeader) -> 17
+        (11, NativeTableHeaders) -> 18
+        (11, TableHeader) -> 19
+        (11, TableHeaders) -> 20
+        (16, LabelWidget) -> 24
+        (16, NativeWidget) -> 5
+        (16, VirtualWidget) -> 25
+        (17, NativeTableHeader) -> 17
+        (17, NativeTableHeaders) -> 27
+        (19, TableHeader) -> 19
+        (19, TableHeaders) -> 30
+        (22, NativeWidget) -> 5
+        (22, VirtualWidget) -> 7
+        (22, VirtualWidgets) -> 10
+        (26, NativeWidget) -> 5
+        (26, VirtualWidget) -> 25
+        (29, LabelWidget) -> 24
+        (35, NativeTableData) -> 41
+        (35, NativeTableDatas) -> 42
+        (38, TableData) -> 45
+        (38, TableDatas) -> 46
+        (40, NativeWidget) -> 5
+        (40, VirtualWidget) -> 47
+        (41, NativeTableData) -> 41
+        (41, NativeTableDatas) -> 48
+        (44, DataWidget) -> 52
+        (45, TableData) -> 45
+        (45, TableDatas) -> 53
+    
+    Rules
+        0: BigBang -> Screen
+        1: Screen -> VirtualWidgets
+        2: VirtualWidgets -> 
+        3: VirtualWidgets -> VirtualWidget VirtualWidgets
+        4: VirtualWidget -> <text/> <expression/>
+        5: VirtualWidget -> <label> <text/> </label> <expression/>
+        6: VirtualWidget -> NativeWidget
+        7: VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>
+        8: TableHeaders -> 
+        9: TableHeaders -> TableHeader TableHeaders
+        10: TableHeader -> <hc> LabelWidget </hc>
+        11: TableDatas -> 
+        12: TableDatas -> TableData TableDatas
+        13: TableData -> <dc> DataWidget </dc>
+        14: LabelWidgets -> 
+        15: LabelWidgets -> LabelWidget LabelWidgets
+        16: LabelWidget -> <text/>
+        17: LabelWidget -> <label> <text/> </label>
+        18: DataWidgets -> 
+        19: DataWidgets -> DataWidget DataWidgets
+        20: DataWidget -> <expression/>
+        21: NativeWidgets -> 
+        22: NativeWidgets -> NativeWidget NativeWidgets
+        23: NativeWidget -> <text/>
+        24: NativeWidget -> <expression/>
+        25: NativeWidget -> <label> VirtualWidgets </label>
+        26: NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>
+        27: NativeTableHeaders -> 
+        28: NativeTableHeaders -> NativeTableHeader NativeTableHeaders
+        29: NativeTableHeader -> <hc> VirtualWidget </hc>
+        30: NativeTableDatas -> 
+        31: NativeTableDatas -> NativeTableData NativeTableDatas
+        32: NativeTableData -> <dc> VirtualWidget </dc>
+    
+    Conflicts
+        (4, <expression/>) -> Shift(12), Reduce(23)
+        (9, </label>) -> Shift(14), Reduce(23)
+        (9, <expression/>) -> Shift(12), Reduce(23)
+        (11, </hr>) -> Reduce(8), Reduce(27)
+        (23, <expression/>) -> Shift(12), Reduce(23)
+        (23, </hc>) -> Reduce(16), Reduce(23)
+        (23, <text/>) -> Reduce(16), Reduce(23)
+        (23, <label>) -> Reduce(16), Reduce(23)
+        (32, </label>) -> Shift(39), Reduce(23)
+        (32, <expression/>) -> Shift(12), Reduce(23)

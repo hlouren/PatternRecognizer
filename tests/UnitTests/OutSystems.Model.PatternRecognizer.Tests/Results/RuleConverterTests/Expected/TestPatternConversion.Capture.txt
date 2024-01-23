@@ -1,0 +1,4 @@
+[Expression.1] VirtualWidget -> w1=<IExpressionWidget> </IExpressionWidget>
+[Expression.2] VirtualWidget -> w1=<ITextWidget> </ITextWidget> w2=<IExpressionWidget> </IExpressionWidget>
+[Expression.3] VirtualWidget -> w1=<ITextWidget> </ITextWidget> <ITextWidget>[Text = ": "] </ITextWidget> w2=<IExpressionWidget> </IExpressionWidget>
+[Expression.4] VirtualWidget -> <ILabelWidget> <Content> w1=<ITextWidget> </ITextWidget> </Content> </ILabelWidget> w2=<IExpressionWidget> </IExpressionWidget>

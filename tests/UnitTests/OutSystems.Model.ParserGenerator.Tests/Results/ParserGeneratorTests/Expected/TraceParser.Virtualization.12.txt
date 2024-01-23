@@ -1,0 +1,60 @@
+Testing "<list> <expression/> </list>" -> OK
+------------------
+    
+    token=<list> stack=[ 0 ]
+    Action Shift(4)
+    
+    token=<expression/> stack=[ 0 <list> 4 ]
+    Action Shift(1)
+    
+    token=</list> stack=[ 0 <list> 4 <expression/> 1 ]
+    Action Reduce(13)
+    Reducing 1 symbols with rule NativeWidget -> <expression/>
+    
+    token=</list> stack=[ 0 <list> 4 NativeWidget 6 ]
+    Action Reduce(10)
+    Reducing 1 symbols with rule VirtualWidget -> NativeWidget
+    
+    token=</list> stack=[ 0 <list> 4 VirtualWidget 8 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    token=</list> stack=[ 0 <list> 4 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    token=</list> stack=[ 0 <list> 4 VirtualWidgets 13 ]
+    Action Shift(20)
+    
+    token=$ stack=[ 0 <list> 4 VirtualWidgets 13 </list> 20 ]
+    Multiple actions found: Reduce(8), Reduce(15)
+    Action Reduce(8)
+    Reducing 3 symbols with rule VirtualWidget -> <list> VirtualWidgets </list>
+    
+    configurationCount=1 token=$ stack=[ 0 VirtualWidget 8 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    configurationCount=1 token=$ stack=[ 0 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    configurationCount=1 token=$ stack=[ 0 VirtualWidgets 9 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule Screen -> VirtualWidgets
+    
+    configurationCount=1 token=$ stack=[ 0 Screen 7 ]
+    Action Accept
+    
+    Parse result:
+    Screen
+        VirtualWidgets
+            List.0
+                <list>
+                VirtualWidgets
+                    VirtualWidget
+                        NativeWidget
+                            <expression/>
+                    VirtualWidgets
+                </list>
+            VirtualWidgets

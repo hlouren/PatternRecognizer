@@ -1,0 +1,15 @@
+n + n * n
+
+E
+    E CaptureName=e1
+        T
+            F
+                n
+    +
+    T CaptureName=e2
+        T CaptureName=e1
+            F
+                n
+        *
+        F CaptureName=e2
+            n

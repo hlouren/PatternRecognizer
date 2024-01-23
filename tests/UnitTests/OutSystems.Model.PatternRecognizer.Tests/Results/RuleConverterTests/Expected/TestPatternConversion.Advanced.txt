@@ -1,0 +1,23 @@
+![LabelWidget] VirtualWidget -> LabelWidget
+![DataWidget] VirtualWidget -> DataWidget
+[Label.1] LabelWidget -> <ITextWidget> </ITextWidget>
+[Label.2] LabelWidget -> <ILabelWidget> <Content> <ITextWidget> </ITextWidget> </Content> </ILabelWidget>
+[Expression.1] DataWidget -> <IExpressionWidget> </IExpressionWidget>
+[Expression.2] DataWidget -> <ITextWidget> </ITextWidget> <IExpressionWidget> </IExpressionWidget>
+[Expression.3] DataWidget -> <ITextWidget> </ITextWidget> <ITextWidget>[Text = ": "] </ITextWidget> <IExpressionWidget> </IExpressionWidget>
+[Expression.4] DataWidget -> <ILabelWidget> <content> <ITextWidget> </ITextWidget> </content> </ILabelWidget> <IExpressionWidget> </IExpressionWidget>
+Rep_0 -> 
+Rep_0 -> VirtualWidget Rep_0
+[List.1] VirtualWidget -> <IListWidget> <ListItem> Rep_0 </ListItem> </IListWidget>
+[List.2] VirtualWidget -> <ITextWidget> </ITextWidget> <IListWidget> <ListItem> Rep_0 </ListItem> </IListWidget>
+Rep_1 -> 
+Rep_1 -> <HeaderCell> <Content> LabelWidget </Content> </HeaderCell> Rep_1
+Rep_2 -> 
+Rep_2 -> <RowCell> <Content> DataWidget </Content> </RowCell> Rep_2
+[Table.1] VirtualWidget -> <HeaderRow> Rep_1 </HeaderRow> <DataRow> Rep_2 </DataRow>
+[Table.2] VirtualWidget -> <ITextWidget> </ITextWidget> <HeaderRow> Rep_1 </HeaderRow> <DataRow> Rep_2 </DataRow>
+Rep_3 -> 
+Rep_3 -> <HeaderCell> <Content> Rep_0 </Content> </HeaderCell> Rep_3
+Rep_4 -> 
+Rep_4 -> <RowCell> <Content> Rep_0 </Content> </RowCell> Rep_4
+[Table.3] VirtualWidget -> <ITextWidget> </ITextWidget> <HeaderRow> Rep_3 </HeaderRow> <DataRow> Rep_4 </DataRow>

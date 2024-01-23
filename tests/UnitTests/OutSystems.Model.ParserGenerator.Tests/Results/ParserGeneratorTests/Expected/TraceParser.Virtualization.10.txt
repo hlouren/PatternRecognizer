@@ -1,0 +1,79 @@
+Testing "<list> <text/> <expression/> <text/> <input/> </list>" -> OK
+------------------
+    
+    token=<list> stack=[ 0 ]
+    Action Shift(4)
+    
+    token=<text/> stack=[ 0 <list> 4 ]
+    Action Shift(12)
+    
+    token=<expression/> stack=[ 0 <list> 4 <text/> 12 ]
+    Multiple actions found: Shift(19), Reduce(11)
+    Action Shift(19)
+    
+    configurationCount=1 token=<text/> stack=[ 0 <list> 4 <text/> 12 <expression/> 19 ]
+    Action Reduce(4)
+    Reducing 2 symbols with rule VirtualWidget -> <text/> <expression/>
+    
+    configurationCount=1 token=<text/> stack=[ 0 <list> 4 VirtualWidget 8 ]
+    Action Shift(5)
+    
+    configurationCount=1 token=<input/> stack=[ 0 <list> 4 VirtualWidget 8 <text/> 5 ]
+    Multiple actions found: Shift(15), Reduce(11)
+    Action Shift(15)
+    
+    configurationCount=2 token=</list> stack=[ 0 <list> 4 VirtualWidget 8 <text/> 5 <input/> 15 ]
+    Action Reduce(6)
+    Reducing 2 symbols with rule VirtualWidget -> <text/> <input/>
+    
+    configurationCount=2 token=</list> stack=[ 0 <list> 4 VirtualWidget 8 VirtualWidget 8 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    configurationCount=2 token=</list> stack=[ 0 <list> 4 VirtualWidget 8 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    configurationCount=2 token=</list> stack=[ 0 <list> 4 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    configurationCount=2 token=</list> stack=[ 0 <list> 4 VirtualWidgets 13 ]
+    Action Shift(20)
+    
+    configurationCount=2 token=$ stack=[ 0 <list> 4 VirtualWidgets 13 </list> 20 ]
+    Multiple actions found: Reduce(8), Reduce(15)
+    Action Reduce(8)
+    Reducing 3 symbols with rule VirtualWidget -> <list> VirtualWidgets </list>
+    
+    configurationCount=3 token=$ stack=[ 0 VirtualWidget 8 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    configurationCount=3 token=$ stack=[ 0 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    configurationCount=3 token=$ stack=[ 0 VirtualWidgets 9 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule Screen -> VirtualWidgets
+    
+    configurationCount=3 token=$ stack=[ 0 Screen 7 ]
+    Action Accept
+    
+    Parse result:
+    Screen
+        VirtualWidgets
+            List.0
+                <list>
+                VirtualWidgets
+                    ExprField.0
+                        <text/>
+                        <expression/>
+                    VirtualWidgets
+                        InputField.0
+                            <text/>
+                            <input/>
+                        VirtualWidgets
+                </list>
+            VirtualWidgets

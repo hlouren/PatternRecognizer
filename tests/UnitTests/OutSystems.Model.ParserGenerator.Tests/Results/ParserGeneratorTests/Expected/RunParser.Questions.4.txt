@@ -1,0 +1,15 @@
+( ? s ) ? s
+
+Session
+    (
+    Session
+        Facts
+        Question
+            ?
+            s
+    )
+    Session
+        Facts
+        Question
+            ?
+            s

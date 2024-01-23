@@ -1,0 +1,26 @@
+<ITextWidget>
+</ITextWidget>
+<IListWidget>
+    <ListItem>
+        <IExpressionWidget>
+        </IExpressionWidget>
+    </ListItem>
+</IListWidget>
+<ITableWidget>
+    <HeaderRow>
+        <IHeaderCellWidget>
+            <Content>
+                <ITextWidget>
+                </ITextWidget>
+            </Content>
+        </IHeaderCellWidget>
+    </HeaderRow>
+    <DataRow>
+        <IDataCellWidget>
+            <Content>
+                <IExpressionWidget>
+                </IExpressionWidget>
+            </Content>
+        </IDataCellWidget>
+    </DataRow>
+</ITableWidget>

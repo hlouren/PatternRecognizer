@@ -1,0 +1,67 @@
+Rules
+----------
+0: BigBang -> S
+1: S -> id[Token.Value = "xpto"]
+2: S -> id
+
+RuleItems
+----------
+0: BigBang -> . S
+1: BigBang -> S .
+2: S -> . id[Token.Value = "xpto"]
+3: S -> id[Token.Value = "xpto"] .
+4: S -> . id
+5: S -> id .
+
+First
+----------
+BigBang: id
+S: id
+
+Follow
+----------
+BigBang: $
+S: $
+
+Created set 0: { BigBang -> . S, S -> . id[Token.Value = "xpto"], S -> . id }
+
+Processing state 0: { BigBang -> . S, S -> . id[Token.Value = "xpto"], S -> . id }
+    Token id
+        Created set 1: { S -> id . }
+        Created set 2: { S -> id[Token.Value = "xpto"] ., S -> id . }
+        Created shift({ unknown -> 1 ; xpto -> 2 }) on id
+        Created transition 0 -[id]-> { unknown -> 1 ; xpto -> 2 }
+    Token S
+        Created set 3: { BigBang -> S . }
+        Created goto(3) on S
+        Created transition 0 -[S]-> 3
+
+Processing state 1: { S -> id . }
+    Created reduce(2) on $
+
+Processing state 2: { S -> id[Token.Value = "xpto"] ., S -> id . }
+    Created reduce(1) on $
+    Created reduce(2) on $
+
+Processing state 3: { BigBang -> S . }
+    Created accept
+
+Parser
+------
+
+    Actions
+        (0, id) -> Shift({ unknown -> 1 ; xpto -> 2 }) ; 1 classifiers
+        (1, $) -> Reduce(2)
+        (2, $) -> Reduce(1), Reduce(2)
+        (3, $) -> Accept
+    
+    Goto
+        (0, S) -> 3
+    
+    Rules
+        0: BigBang -> S
+        1: S -> id[Token.Value = "xpto"]
+        2: S -> id
+    
+    Conflicts
+        (2, $) -> Reduce(1), Reduce(2)

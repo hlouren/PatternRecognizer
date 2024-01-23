@@ -1,0 +1,25 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <TargetFramework>net7.0</TargetFramework>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Company>OutSystems</Company>
+        <Authors>$(Company)</Authors>
+        <Product>OutSystems Platform</Product>
+        <Copyright>© OutSystems. All rights reserved.</Copyright>
+        <NeutralLanguage>en</NeutralLanguage>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <PackageIcon>OutSystems.png</PackageIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <SourceRoot Include="$(MSBuildThisFileDirectory)/"/>
+        <None Include="$(MSBuildThisFileDirectory)OutSystems.png" Pack="true" PackagePath="" />
+    </ItemGroup>
+
+</Project>

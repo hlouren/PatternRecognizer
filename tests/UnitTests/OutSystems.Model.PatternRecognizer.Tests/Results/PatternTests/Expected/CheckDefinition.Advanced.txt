@@ -1,0 +1,74 @@
+Pattern LabelWidget! : VirtualWidget
+    LabelWidget
+
+Pattern DataWidget! : VirtualWidget
+    DataWidget
+
+Pattern Label.1 : LabelWidget
+    ITextWidget
+
+Pattern Label.2 : LabelWidget
+    ILabelWidget
+    |   Content
+    |   |   ITextWidget
+
+Pattern Expression.1 : DataWidget
+    IExpressionWidget
+
+Pattern Expression.2 : DataWidget
+    ITextWidget
+    IExpressionWidget
+
+Pattern Expression.3 : DataWidget
+    ITextWidget
+    ITextWidget [Text = ": "]
+    IExpressionWidget
+
+Pattern Expression.4 : DataWidget
+    ILabelWidget
+    |   content
+    |   |   ITextWidget
+    IExpressionWidget
+
+Pattern List.1 : VirtualWidget
+    IListWidget
+    |   ListItem
+    |   |   VirtualWidget*
+
+Pattern List.2 : VirtualWidget
+    ITextWidget
+    IListWidget
+    |   ListItem
+    |   |   VirtualWidget*
+
+Pattern Table.1 : VirtualWidget
+    HeaderRow
+    |   HeaderCell*
+    |   |   Content
+    |   |   |   LabelWidget
+    DataRow
+    |   RowCell*
+    |   |   Content
+    |   |   |   DataWidget
+
+Pattern Table.2 : VirtualWidget
+    ITextWidget
+    HeaderRow
+    |   HeaderCell*
+    |   |   Content
+    |   |   |   LabelWidget
+    DataRow
+    |   RowCell*
+    |   |   Content
+    |   |   |   DataWidget
+
+Pattern Table.3 : VirtualWidget
+    ITextWidget
+    HeaderRow
+    |   HeaderCell*
+    |   |   Content
+    |   |   |   VirtualWidget*
+    DataRow
+    |   RowCell*
+    |   |   Content
+    |   |   |   VirtualWidget*

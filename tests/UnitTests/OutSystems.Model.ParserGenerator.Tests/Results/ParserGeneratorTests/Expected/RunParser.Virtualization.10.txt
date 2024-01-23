@@ -1,0 +1,17 @@
+<list> <text/> <expression/> <text/> <input/> </list>
+
+Screen
+    VirtualWidgets
+        List.0
+            <list>
+            VirtualWidgets
+                ExprField.0
+                    <text/>
+                    <expression/>
+                VirtualWidgets
+                    InputField.0
+                        <text/>
+                        <input/>
+                    VirtualWidgets
+            </list>
+        VirtualWidgets

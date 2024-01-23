@@ -1,0 +1,17 @@
+Actions
+    (0, <b>) -> Shift(1)
+    (1, <t/>) -> Shift(3)
+    (2, $) -> Accept
+    (3, </b>) -> Shift(4)
+    (4, $) -> Reduce(1), Reduce(2)
+
+Goto
+    (0, S) -> 2
+
+Rules
+    0: BigBang -> S
+    1: S -> <b> <t/> </b>
+    2: S -> <b> <t/> </b>
+
+Conflicts
+    (4, $) -> Reduce(1), Reduce(2)

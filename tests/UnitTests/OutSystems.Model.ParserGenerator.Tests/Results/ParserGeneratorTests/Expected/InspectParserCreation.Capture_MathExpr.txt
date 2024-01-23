@@ -1,0 +1,217 @@
+Rules
+----------
+0: BigBang -> E
+1: E -> e1=E + e2=T
+2: E -> T
+3: T -> e1=T * e2=F
+4: T -> F
+5: F -> ( E )
+6: F -> n
+
+RuleItems
+----------
+0: BigBang -> . E
+1: BigBang -> E .
+2: E -> . e1=E + e2=T
+3: E -> e1=E . + e2=T
+4: E -> e1=E + . e2=T
+5: E -> e1=E + e2=T .
+6: E -> . T
+7: E -> T .
+8: T -> . e1=T * e2=F
+9: T -> e1=T . * e2=F
+10: T -> e1=T * . e2=F
+11: T -> e1=T * e2=F .
+12: T -> . F
+13: T -> F .
+14: F -> . ( E )
+15: F -> ( . E )
+16: F -> ( E . )
+17: F -> ( E ) .
+18: F -> . n
+19: F -> n .
+
+First
+----------
+BigBang: ( n
+E: ( n
+F: ( n
+T: ( n
+
+Follow
+----------
+BigBang: $
+E: ) + $
+F: ) * + $
+T: ) * + $
+
+Created set 0: { BigBang -> . E, E -> . e1=E + e2=T, E -> . T, T -> . e1=T * e2=F, T -> . F, F -> . ( E ), F -> . n }
+
+Processing state 0: { BigBang -> . E, E -> . e1=E + e2=T, E -> . T, T -> . e1=T * e2=F, T -> . F, F -> . ( E ), F -> . n }
+    Token (
+        Created set 1: { E -> . e1=E + e2=T, E -> . T, T -> . e1=T * e2=F, T -> . F, F -> . ( E ), F -> ( . E ), F -> . n }
+        Created shift(1) on (
+        Created transition 0 -[(]-> 1
+    Token n
+        Created set 2: { F -> n . }
+        Created shift(2) on n
+        Created transition 0 -[n]-> 2
+    Token E
+        Created set 3: { BigBang -> E ., E -> e1=E . + e2=T }
+        Created goto(3) on E
+        Created transition 0 -[E]-> 3
+    Token F
+        Created set 4: { T -> F . }
+        Created goto(4) on F
+        Created transition 0 -[F]-> 4
+    Token T
+        Created set 5: { E -> T ., T -> e1=T . * e2=F }
+        Created goto(5) on T
+        Created transition 0 -[T]-> 5
+
+Processing state 1: { E -> . e1=E + e2=T, E -> . T, T -> . e1=T * e2=F, T -> . F, F -> . ( E ), F -> ( . E ), F -> . n }
+    Token (
+        Created shift(1) on (
+        Created transition 1 -[(]-> 1
+    Token n
+        Created shift(2) on n
+        Created transition 1 -[n]-> 2
+    Token E
+        Created set 6: { E -> e1=E . + e2=T, F -> ( E . ) }
+        Created goto(6) on E
+        Created transition 1 -[E]-> 6
+    Token F
+        Created goto(4) on F
+        Created transition 1 -[F]-> 4
+    Token T
+        Created goto(5) on T
+        Created transition 1 -[T]-> 5
+
+Processing state 2: { F -> n . }
+    Created reduce(6) on $, +, *, )
+
+Processing state 3: { BigBang -> E ., E -> e1=E . + e2=T }
+    Token +
+        Created set 7: { E -> e1=E + . e2=T, T -> . e1=T * e2=F, T -> . F, F -> . ( E ), F -> . n }
+        Created shift(7) on +
+        Created transition 3 -[+]-> 7
+    Created accept
+
+Processing state 4: { T -> F . }
+    Created reduce(4) on $, +, *, )
+
+Processing state 5: { E -> T ., T -> e1=T . * e2=F }
+    Token *
+        Created set 8: { T -> e1=T * . e2=F, F -> . ( E ), F -> . n }
+        Created shift(8) on *
+        Created transition 5 -[*]-> 8
+    Created reduce(2) on $, +, )
+
+Processing state 6: { E -> e1=E . + e2=T, F -> ( E . ) }
+    Token )
+        Created set 9: { F -> ( E ) . }
+        Created shift(9) on )
+        Created transition 6 -[)]-> 9
+    Token +
+        Created shift(7) on +
+        Created transition 6 -[+]-> 7
+
+Processing state 7: { E -> e1=E + . e2=T, T -> . e1=T * e2=F, T -> . F, F -> . ( E ), F -> . n }
+    Token (
+        Created shift(1) on (
+        Created transition 7 -[(]-> 1
+    Token n
+        Created shift(2) on n
+        Created transition 7 -[n]-> 2
+    Token F
+        Created goto(4) on F
+        Created transition 7 -[F]-> 4
+    Token T
+        Created set 10: { E -> e1=E + e2=T ., T -> e1=T . * e2=F }
+        Created goto(10) on T
+        Created transition 7 -[T]-> 10
+
+Processing state 8: { T -> e1=T * . e2=F, F -> . ( E ), F -> . n }
+    Token (
+        Created shift(1) on (
+        Created transition 8 -[(]-> 1
+    Token n
+        Created shift(2) on n
+        Created transition 8 -[n]-> 2
+    Token F
+        Created set 11: { T -> e1=T * e2=F . }
+        Created goto(11) on F
+        Created transition 8 -[F]-> 11
+
+Processing state 9: { F -> ( E ) . }
+    Created reduce(5) on $, +, *, )
+
+Processing state 10: { E -> e1=E + e2=T ., T -> e1=T . * e2=F }
+    Token *
+        Created shift(8) on *
+        Created transition 10 -[*]-> 8
+    Created reduce(1) on $, +, )
+
+Processing state 11: { T -> e1=T * e2=F . }
+    Created reduce(3) on $, +, *, )
+
+Parser
+------
+
+    Actions
+        (0, () -> Shift(1)
+        (0, n) -> Shift(2)
+        (1, () -> Shift(1)
+        (1, n) -> Shift(2)
+        (2, )) -> Reduce(6)
+        (2, *) -> Reduce(6)
+        (2, +) -> Reduce(6)
+        (2, $) -> Reduce(6)
+        (3, +) -> Shift(7)
+        (3, $) -> Accept
+        (4, )) -> Reduce(4)
+        (4, *) -> Reduce(4)
+        (4, +) -> Reduce(4)
+        (4, $) -> Reduce(4)
+        (5, )) -> Reduce(2)
+        (5, *) -> Shift(8)
+        (5, +) -> Reduce(2)
+        (5, $) -> Reduce(2)
+        (6, )) -> Shift(9)
+        (6, +) -> Shift(7)
+        (7, () -> Shift(1)
+        (7, n) -> Shift(2)
+        (8, () -> Shift(1)
+        (8, n) -> Shift(2)
+        (9, )) -> Reduce(5)
+        (9, *) -> Reduce(5)
+        (9, +) -> Reduce(5)
+        (9, $) -> Reduce(5)
+        (10, )) -> Reduce(1)
+        (10, *) -> Shift(8)
+        (10, +) -> Reduce(1)
+        (10, $) -> Reduce(1)
+        (11, )) -> Reduce(3)
+        (11, *) -> Reduce(3)
+        (11, +) -> Reduce(3)
+        (11, $) -> Reduce(3)
+    
+    Goto
+        (0, E) -> 3
+        (0, F) -> 4
+        (0, T) -> 5
+        (1, E) -> 6
+        (1, F) -> 4
+        (1, T) -> 5
+        (7, F) -> 4
+        (7, T) -> 10
+        (8, F) -> 11
+    
+    Rules
+        0: BigBang -> E
+        1: E -> e1=E + e2=T
+        2: E -> T
+        3: T -> e1=T * e2=F
+        4: T -> F
+        5: F -> ( E )
+        6: F -> n

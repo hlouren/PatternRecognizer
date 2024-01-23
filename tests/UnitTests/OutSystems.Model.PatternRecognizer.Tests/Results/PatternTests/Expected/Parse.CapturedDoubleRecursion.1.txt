@@ -1,0 +1,12 @@
+Table.1
+    NativeWidgets: { <TableWidget> <HeaderRow>  </HeaderRow> <DataRow>  </DataRow> </TableWidget> }
+    Captures:
+        w1 -> <TableWidget> <HeaderRow>  </HeaderRow> <DataRow>  </DataRow> </TableWidget>
+        w2 -> <HeaderRow>  </HeaderRow>
+        w3 -> [  ]
+        w4 -> [  ]
+        CHeader -> [  ]
+        w5 -> <DataRow>  </DataRow>
+        w6 -> [  ]
+        w7 -> [  ]
+        CData -> [  ]

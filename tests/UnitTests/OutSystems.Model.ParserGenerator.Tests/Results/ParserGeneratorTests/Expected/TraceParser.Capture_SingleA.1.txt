@@ -1,0 +1,16 @@
+Testing "a" -> OK
+------------------
+    
+    token=a stack=[ 0 ]
+    Action Shift(1)
+    
+    token=$ stack=[ 0 a 1 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule S -> c=a
+    
+    token=$ stack=[ 0 S 2 ]
+    Action Accept
+    
+    Parse result:
+    S
+        a CaptureName=c

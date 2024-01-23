@@ -1,0 +1,12 @@
+Testing "" -> OK
+------------------
+    
+    token=$ stack=[ 0 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule S -> 
+    
+    token=$ stack=[ 0 S 2 ]
+    Action Accept
+    
+    Parse result:
+    S

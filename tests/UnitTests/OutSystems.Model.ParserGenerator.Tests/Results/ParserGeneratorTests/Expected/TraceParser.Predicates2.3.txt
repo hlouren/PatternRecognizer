@@ -1,0 +1,16 @@
+Testing "id[hello]" -> OK
+------------------
+    
+    token=id stack=[ 0 ]
+    Action Shift(1)
+    
+    token=$ stack=[ 0 id 1 ]
+    Action Reduce(2)
+    Reducing 1 symbols with rule S -> id
+    
+    token=$ stack=[ 0 S 3 ]
+    Action Accept
+    
+    Parse result:
+    R.2
+        hello

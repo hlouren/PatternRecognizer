@@ -1,0 +1,25 @@
+Testing "a a" -> OK
+------------------
+    
+    token=a stack=[ 0 ]
+    Action Shift(2)
+    
+    token=a stack=[ 0 a 2 ]
+    Action Shift(2)
+    
+    token=$ stack=[ 0 a 2 a 2 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule S -> a
+    
+    token=$ stack=[ 0 a 2 S 3 ]
+    Action Reduce(0)
+    Reducing 2 symbols with rule S -> S a
+    
+    token=$ stack=[ 0 S 1 ]
+    Action Accept
+    
+    Parse result:
+    S
+        a
+        S
+            a

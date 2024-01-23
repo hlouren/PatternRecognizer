@@ -1,0 +1,11 @@
+[Text.1] VirtualWidget -> <ITextWidget> </ITextWidget>
+[Expr.1] VirtualWidget -> <IExpressionWidget> </IExpressionWidget>
+Rep_0 -> 
+Rep_1 -> 
+Rep_1 -> CHeader=VirtualWidget Rep_1
+Rep_0 -> w3=<IHeaderCellWidget> w4=<Content> CHeader=Rep_1 </Content> </IHeaderCellWidget> Rep_0
+Rep_2 -> 
+Rep_3 -> 
+Rep_3 -> CData=VirtualWidget Rep_3
+Rep_2 -> w6=<IDataCellWidget> w7=<Content> CData=Rep_3 </Content> </IDataCellWidget> Rep_2
+[Table.1] VirtualWidget -> w1=<ITableWidget> w2=<HeaderRow> w3=Rep_0 </HeaderRow> w5=<DataRow> w6=Rep_2 </DataRow> </ITableWidget>

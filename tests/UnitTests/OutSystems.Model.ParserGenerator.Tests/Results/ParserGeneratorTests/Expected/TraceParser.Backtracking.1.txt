@@ -1,0 +1,44 @@
+Testing "a a a" -> OK
+------------------
+    
+    token=a stack=[ 0 ]
+    Action Shift(1)
+    
+    token=a stack=[ 0 a 1 ]
+    Action Shift(3)
+    
+    token=a stack=[ 0 a 1 a 3 ]
+    Action Shift(4)
+    
+    token=$ stack=[ 0 a 1 a 3 a 4 ]
+    Multiple actions found: Reduce(5), Reduce(6)
+    Action Reduce(5)
+    Reducing 1 symbols with rule A2 -> a
+    
+    configurationCount=1 token=$ stack=[ 0 a 1 a 3 A2 6 ]
+    Unexpected token $
+    
+    Backtracking...
+    
+    token=$ stack=[ 0 a 1 a 3 a 4 ]
+    Action Reduce(6)
+    Reducing 1 symbols with rule B2 -> a
+    
+    token=$ stack=[ 0 a 1 a 3 B2 9 ]
+    Action Reduce(4)
+    Reducing 1 symbols with rule B -> B2
+    
+    token=$ stack=[ 0 a 1 a 3 B 8 ]
+    Action Reduce(2)
+    Reducing 3 symbols with rule S -> a a B
+    
+    token=$ stack=[ 0 S 2 ]
+    Action Accept
+    
+    Parse result:
+    S
+        a
+        a
+        B
+            B2
+                a

@@ -1,0 +1,21 @@
+Testing "id" -> OK
+------------------
+    
+    token=id stack=[ 0 ]
+    Action Shift(1)
+    
+    token=$ stack=[ 0 id 1 ]
+    Action Reduce(3)
+    Reducing 1 symbols with rule A -> id
+    
+    token=$ stack=[ 0 A 2 ]
+    Action Reduce(2)
+    Reducing 1 symbols with rule S -> A
+    
+    token=$ stack=[ 0 S 4 ]
+    Action Accept
+    
+    Parse result:
+    R2
+        A
+            id

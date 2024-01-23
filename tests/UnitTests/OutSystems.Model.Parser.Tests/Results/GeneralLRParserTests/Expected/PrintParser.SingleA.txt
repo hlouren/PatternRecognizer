@@ -1,0 +1,10 @@
+Actions
+    (0, a) -> Shift(2)
+    (1, $) -> Accept
+    (2, $) -> Reduce(0)
+
+Goto
+    (0, S) -> 1
+
+Rules
+    0: S -> a

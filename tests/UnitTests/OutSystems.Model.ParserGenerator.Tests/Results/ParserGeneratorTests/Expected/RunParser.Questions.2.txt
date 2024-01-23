@@ -1,0 +1,11 @@
+! s ? s
+
+Session
+    Facts
+        Fact
+            !
+            s
+        Facts
+    Question
+        ?
+        s

@@ -1,0 +1,26 @@
+<table> <hr> <hc> <text/> </hc> </hr> <dr> <dc> <expression/> </dc> </dr> </table>
+
+Screen
+    VirtualWidgets
+        Table.0
+            <table>
+            <hr>
+            TableHeaders
+                TableHeader
+                    <hc>
+                    LText.0
+                        <text/>
+                    </hc>
+                TableHeaders
+            </hr>
+            <dr>
+            TableDatas
+                TableData
+                    <dc>
+                    DataExpr.0
+                        <expression/>
+                    </dc>
+                TableDatas
+            </dr>
+            </table>
+        VirtualWidgets

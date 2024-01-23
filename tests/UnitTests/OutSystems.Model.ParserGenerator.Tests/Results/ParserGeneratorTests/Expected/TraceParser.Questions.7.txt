@@ -1,0 +1,15 @@
+Testing "? s ( ? s )" -> Error
+------------------
+    
+    token=? stack=[ 0 ]
+    Action Reduce(4)
+    Reducing 0 symbols with rule Facts -> 
+    
+    token=? stack=[ 0 Facts 4 ]
+    Action Shift(9)
+    
+    token=s stack=[ 0 Facts 4 ? 9 ]
+    Action Shift(12)
+    
+    token=( stack=[ 0 Facts 4 ? 9 s 12 ]
+    Unexpected token (

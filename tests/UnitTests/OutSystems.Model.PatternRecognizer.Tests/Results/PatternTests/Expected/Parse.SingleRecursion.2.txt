@@ -1,0 +1,7 @@
+List.1
+    NativeWidgets: { <ListWidget> <ListItem> <TextWidget Text=T_0 /> </ListItem> </ListWidget> }
+    Captures:
+        Child -> [ Text.1 ]
+    Children:
+        Text.1
+            NativeWidgets: { <TextWidget Text=T_0 /> }

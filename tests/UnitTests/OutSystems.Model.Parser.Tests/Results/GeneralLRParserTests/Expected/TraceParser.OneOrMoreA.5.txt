@@ -1,0 +1,5 @@
+Testing "" -> Error
+------------------
+    
+    token=$ stack=[ 0 ]
+    Unexpected token $

@@ -1,0 +1,102 @@
+Testing "( ! s ? s ) ! s ? s" -> OK
+------------------
+    
+    token=( stack=[ 0 ]
+    Action Shift(2)
+    
+    token=! stack=[ 0 ( 2 ]
+    Action Shift(1)
+    
+    token=s stack=[ 0 ( 2 ! 1 ]
+    Action Shift(6)
+    
+    token=? stack=[ 0 ( 2 ! 1 s 6 ]
+    Action Reduce(5)
+    Reducing 2 symbols with rule Fact -> ! s
+    
+    token=? stack=[ 0 ( 2 Fact 3 ]
+    Action Reduce(4)
+    Reducing 0 symbols with rule Facts -> 
+    
+    token=? stack=[ 0 ( 2 Fact 3 Facts 8 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule Facts -> Fact Facts
+    
+    token=? stack=[ 0 ( 2 Facts 4 ]
+    Action Shift(9)
+    
+    token=s stack=[ 0 ( 2 Facts 4 ? 9 ]
+    Action Shift(12)
+    
+    token=) stack=[ 0 ( 2 Facts 4 ? 9 s 12 ]
+    Action Reduce(6)
+    Reducing 2 symbols with rule Question -> ? s
+    
+    token=) stack=[ 0 ( 2 Facts 4 Question 10 ]
+    Action Reduce(1)
+    Reducing 2 symbols with rule Session -> Facts Question
+    
+    token=) stack=[ 0 ( 2 Session 7 ]
+    Action Shift(11)
+    
+    token=! stack=[ 0 ( 2 Session 7 ) 11 ]
+    Action Shift(1)
+    
+    token=s stack=[ 0 ( 2 Session 7 ) 11 ! 1 ]
+    Action Shift(6)
+    
+    token=? stack=[ 0 ( 2 Session 7 ) 11 ! 1 s 6 ]
+    Action Reduce(5)
+    Reducing 2 symbols with rule Fact -> ! s
+    
+    token=? stack=[ 0 ( 2 Session 7 ) 11 Fact 3 ]
+    Action Reduce(4)
+    Reducing 0 symbols with rule Facts -> 
+    
+    token=? stack=[ 0 ( 2 Session 7 ) 11 Fact 3 Facts 8 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule Facts -> Fact Facts
+    
+    token=? stack=[ 0 ( 2 Session 7 ) 11 Facts 4 ]
+    Action Shift(9)
+    
+    token=s stack=[ 0 ( 2 Session 7 ) 11 Facts 4 ? 9 ]
+    Action Shift(12)
+    
+    token=$ stack=[ 0 ( 2 Session 7 ) 11 Facts 4 ? 9 s 12 ]
+    Action Reduce(6)
+    Reducing 2 symbols with rule Question -> ? s
+    
+    token=$ stack=[ 0 ( 2 Session 7 ) 11 Facts 4 Question 10 ]
+    Action Reduce(1)
+    Reducing 2 symbols with rule Session -> Facts Question
+    
+    token=$ stack=[ 0 ( 2 Session 7 ) 11 Session 13 ]
+    Action Reduce(2)
+    Reducing 4 symbols with rule Session -> ( Session ) Session
+    
+    token=$ stack=[ 0 Session 5 ]
+    Action Accept
+    
+    Parse result:
+    Session
+        (
+        Session
+            Facts
+                Fact
+                    !
+                    s
+                Facts
+            Question
+                ?
+                s
+        )
+        Session
+            Facts
+                Fact
+                    !
+                    s
+                Facts
+            Question
+                ?
+                s

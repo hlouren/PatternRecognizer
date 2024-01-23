@@ -1,0 +1,17 @@
+Pattern Expression.1 : VirtualWidget
+    w1=IExpressionWidget
+
+Pattern Expression.2 : VirtualWidget
+    w1=ITextWidget
+    w2=IExpressionWidget
+
+Pattern Expression.3 : VirtualWidget
+    w1=ITextWidget
+    ITextWidget [Text = ": "]
+    w2=IExpressionWidget
+
+Pattern Expression.4 : VirtualWidget
+    ILabelWidget
+    |   Content
+    |   |   w1=ITextWidget
+    w2=IExpressionWidget

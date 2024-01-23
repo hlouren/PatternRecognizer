@@ -1,0 +1,90 @@
+Testing "( n + n ) * n" -> OK
+------------------
+    
+    token=( stack=[ 0 ]
+    Action Shift(1)
+    
+    token=n stack=[ 0 ( 1 ]
+    Action Shift(2)
+    
+    token=+ stack=[ 0 ( 1 n 2 ]
+    Action Reduce(6)
+    Reducing 1 symbols with rule F -> n
+    
+    token=+ stack=[ 0 ( 1 F 4 ]
+    Action Reduce(4)
+    Reducing 1 symbols with rule T -> F
+    
+    token=+ stack=[ 0 ( 1 T 5 ]
+    Action Reduce(2)
+    Reducing 1 symbols with rule E -> T
+    
+    token=+ stack=[ 0 ( 1 E 6 ]
+    Action Shift(7)
+    
+    token=n stack=[ 0 ( 1 E 6 + 7 ]
+    Action Shift(2)
+    
+    token=) stack=[ 0 ( 1 E 6 + 7 n 2 ]
+    Action Reduce(6)
+    Reducing 1 symbols with rule F -> n
+    
+    token=) stack=[ 0 ( 1 E 6 + 7 F 4 ]
+    Action Reduce(4)
+    Reducing 1 symbols with rule T -> F
+    
+    token=) stack=[ 0 ( 1 E 6 + 7 T 10 ]
+    Action Reduce(1)
+    Reducing 3 symbols with rule E -> E + T
+    
+    token=) stack=[ 0 ( 1 E 6 ]
+    Action Shift(9)
+    
+    token=* stack=[ 0 ( 1 E 6 ) 9 ]
+    Action Reduce(5)
+    Reducing 3 symbols with rule F -> ( E )
+    
+    token=* stack=[ 0 F 4 ]
+    Action Reduce(4)
+    Reducing 1 symbols with rule T -> F
+    
+    token=* stack=[ 0 T 5 ]
+    Action Shift(8)
+    
+    token=n stack=[ 0 T 5 * 8 ]
+    Action Shift(2)
+    
+    token=$ stack=[ 0 T 5 * 8 n 2 ]
+    Action Reduce(6)
+    Reducing 1 symbols with rule F -> n
+    
+    token=$ stack=[ 0 T 5 * 8 F 11 ]
+    Action Reduce(3)
+    Reducing 3 symbols with rule T -> T * F
+    
+    token=$ stack=[ 0 T 5 ]
+    Action Reduce(2)
+    Reducing 1 symbols with rule E -> T
+    
+    token=$ stack=[ 0 E 3 ]
+    Action Accept
+    
+    Parse result:
+    E
+        T
+            T
+                F
+                    (
+                    E
+                        E
+                            T
+                                F
+                                    n
+                        +
+                        T
+                            F
+                                n
+                    )
+            *
+            F
+                n

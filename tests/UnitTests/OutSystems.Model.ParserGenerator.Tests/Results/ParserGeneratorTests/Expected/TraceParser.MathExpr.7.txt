@@ -1,0 +1,20 @@
+Testing "n )" -> Error
+------------------
+    
+    token=n stack=[ 0 ]
+    Action Shift(2)
+    
+    token=) stack=[ 0 n 2 ]
+    Action Reduce(6)
+    Reducing 1 symbols with rule F -> n
+    
+    token=) stack=[ 0 F 4 ]
+    Action Reduce(4)
+    Reducing 1 symbols with rule T -> F
+    
+    token=) stack=[ 0 T 5 ]
+    Action Reduce(2)
+    Reducing 1 symbols with rule E -> T
+    
+    token=) stack=[ 0 E 3 ]
+    Unexpected token )

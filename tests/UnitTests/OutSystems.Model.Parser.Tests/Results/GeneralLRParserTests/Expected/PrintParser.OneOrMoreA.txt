@@ -1,0 +1,14 @@
+Actions
+    (0, a) -> Shift(2)
+    (1, $) -> Accept
+    (2, $) -> Reduce(1)
+    (2, a) -> Shift(2)
+    (3, $) -> Reduce(0)
+
+Goto
+    (0, S) -> 1
+    (2, S) -> 3
+
+Rules
+    0: S -> S a
+    1: S -> a

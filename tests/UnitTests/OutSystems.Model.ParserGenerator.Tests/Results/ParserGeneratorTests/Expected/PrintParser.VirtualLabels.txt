@@ -1,0 +1,274 @@
+Actions
+    (0, </label>) -> Reduce(2)
+    (0, <expression/>) -> Shift(1)
+    (0, <label>) -> Shift(2)
+    (0, <table>) -> Shift(3)
+    (0, <text/>) -> Shift(4)
+    (0, $) -> Reduce(2)
+    (1, </dc>) -> Reduce(24)
+    (1, </hc>) -> Reduce(24)
+    (1, </label>) -> Reduce(24)
+    (1, <expression/>) -> Reduce(24)
+    (1, <label>) -> Reduce(24)
+    (1, <table>) -> Reduce(24)
+    (1, <text/>) -> Reduce(24)
+    (1, $) -> Reduce(24)
+    (2, </label>) -> Reduce(2)
+    (2, <expression/>) -> Shift(1)
+    (2, <label>) -> Shift(2)
+    (2, <table>) -> Shift(3)
+    (2, <text/>) -> Shift(9)
+    (2, $) -> Reduce(2)
+    (3, <hr>) -> Shift(11)
+    (4, </dc>) -> Reduce(23)
+    (4, </hc>) -> Reduce(23)
+    (4, </label>) -> Reduce(23)
+    (4, <expression/>) -> Shift(12), Reduce(23)
+    (4, <label>) -> Reduce(23)
+    (4, <table>) -> Reduce(23)
+    (4, <text/>) -> Reduce(23)
+    (4, $) -> Reduce(23)
+    (5, </dc>) -> Reduce(6)
+    (5, </hc>) -> Reduce(6)
+    (5, </label>) -> Reduce(6)
+    (5, <expression/>) -> Reduce(6)
+    (5, <label>) -> Reduce(6)
+    (5, <table>) -> Reduce(6)
+    (5, <text/>) -> Reduce(6)
+    (5, $) -> Reduce(6)
+    (6, $) -> Accept
+    (7, </label>) -> Reduce(2)
+    (7, <expression/>) -> Shift(1)
+    (7, <label>) -> Shift(2)
+    (7, <table>) -> Shift(3)
+    (7, <text/>) -> Shift(4)
+    (7, $) -> Reduce(2)
+    (8, $) -> Reduce(1)
+    (9, </dc>) -> Reduce(23)
+    (9, </hc>) -> Reduce(23)
+    (9, </label>) -> Shift(14), Reduce(23)
+    (9, <expression/>) -> Shift(12), Reduce(23)
+    (9, <label>) -> Reduce(23)
+    (9, <table>) -> Reduce(23)
+    (9, <text/>) -> Reduce(23)
+    (9, $) -> Reduce(23)
+    (10, </label>) -> Shift(15)
+    (11, </hr>) -> Reduce(8), Reduce(27)
+    (11, <hc>) -> Shift(16)
+    (12, </dc>) -> Reduce(4)
+    (12, </hc>) -> Reduce(4)
+    (12, </label>) -> Reduce(4)
+    (12, <expression/>) -> Reduce(4)
+    (12, <label>) -> Reduce(4)
+    (12, <table>) -> Reduce(4)
+    (12, <text/>) -> Reduce(4)
+    (12, $) -> Reduce(4)
+    (13, </label>) -> Reduce(3)
+    (13, $) -> Reduce(3)
+    (14, <expression/>) -> Shift(21)
+    (15, </dc>) -> Reduce(25)
+    (15, </hc>) -> Reduce(25)
+    (15, </label>) -> Reduce(25)
+    (15, <expression/>) -> Reduce(25)
+    (15, <label>) -> Reduce(25)
+    (15, <table>) -> Reduce(25)
+    (15, <text/>) -> Reduce(25)
+    (15, $) -> Reduce(25)
+    (16, <expression/>) -> Shift(1)
+    (16, <label>) -> Shift(22)
+    (16, <table>) -> Shift(3)
+    (16, <text/>) -> Shift(23)
+    (17, </hr>) -> Reduce(27)
+    (17, <hc>) -> Shift(26)
+    (18, </hr>) -> Shift(28)
+    (19, </hr>) -> Reduce(8)
+    (19, <hc>) -> Shift(29)
+    (20, </hr>) -> Shift(31)
+    (21, </dc>) -> Reduce(5)
+    (21, </hc>) -> Reduce(5)
+    (21, </label>) -> Reduce(5)
+    (21, <expression/>) -> Reduce(5)
+    (21, <label>) -> Reduce(5)
+    (21, <table>) -> Reduce(5)
+    (21, <text/>) -> Reduce(5)
+    (21, $) -> Reduce(5)
+    (22, </label>) -> Reduce(2)
+    (22, <expression/>) -> Shift(1)
+    (22, <label>) -> Shift(2)
+    (22, <table>) -> Shift(3)
+    (22, <text/>) -> Shift(32)
+    (22, $) -> Reduce(2)
+    (23, </dc>) -> Reduce(23)
+    (23, </hc>) -> Reduce(16), Reduce(23)
+    (23, </label>) -> Reduce(23)
+    (23, <expression/>) -> Shift(12), Reduce(23)
+    (23, <label>) -> Reduce(16), Reduce(23)
+    (23, <table>) -> Reduce(23)
+    (23, <text/>) -> Reduce(16), Reduce(23)
+    (23, $) -> Reduce(23)
+    (24, </hc>) -> Shift(33)
+    (25, </hc>) -> Shift(34)
+    (26, <expression/>) -> Shift(1)
+    (26, <label>) -> Shift(2)
+    (26, <table>) -> Shift(3)
+    (26, <text/>) -> Shift(4)
+    (27, </hr>) -> Reduce(28)
+    (28, <dr>) -> Shift(35)
+    (29, <label>) -> Shift(36)
+    (29, <text/>) -> Shift(37)
+    (30, </hr>) -> Reduce(9)
+    (31, <dr>) -> Shift(38)
+    (32, </dc>) -> Reduce(23)
+    (32, </hc>) -> Reduce(23)
+    (32, </label>) -> Shift(39), Reduce(23)
+    (32, <expression/>) -> Shift(12), Reduce(23)
+    (32, <label>) -> Reduce(23)
+    (32, <table>) -> Reduce(23)
+    (32, <text/>) -> Reduce(23)
+    (32, $) -> Reduce(23)
+    (33, </hr>) -> Reduce(10)
+    (33, <hc>) -> Reduce(10)
+    (34, </hr>) -> Reduce(29)
+    (34, <hc>) -> Reduce(29)
+    (35, </dr>) -> Reduce(30)
+    (35, <dc>) -> Shift(40)
+    (36, <text/>) -> Shift(43)
+    (37, </hc>) -> Reduce(16)
+    (37, <label>) -> Reduce(16)
+    (37, <text/>) -> Reduce(16)
+    (38, </dr>) -> Reduce(11)
+    (38, <dc>) -> Shift(44)
+    (39, </hc>) -> Reduce(17)
+    (39, <expression/>) -> Shift(21)
+    (39, <label>) -> Reduce(17)
+    (39, <text/>) -> Reduce(17)
+    (40, <expression/>) -> Shift(1)
+    (40, <label>) -> Shift(2)
+    (40, <table>) -> Shift(3)
+    (40, <text/>) -> Shift(4)
+    (41, </dr>) -> Reduce(30)
+    (41, <dc>) -> Shift(40)
+    (42, </dr>) -> Shift(49)
+    (43, </label>) -> Shift(50)
+    (44, <expression/>) -> Shift(51)
+    (45, </dr>) -> Reduce(11)
+    (45, <dc>) -> Shift(44)
+    (46, </dr>) -> Shift(54)
+    (47, </dc>) -> Shift(55)
+    (48, </dr>) -> Reduce(31)
+    (49, </table>) -> Shift(56)
+    (50, </hc>) -> Reduce(17)
+    (50, <label>) -> Reduce(17)
+    (50, <text/>) -> Reduce(17)
+    (51, </dc>) -> Reduce(20)
+    (51, <expression/>) -> Reduce(20)
+    (52, </dc>) -> Shift(57)
+    (53, </dr>) -> Reduce(12)
+    (54, </table>) -> Shift(58)
+    (55, </dr>) -> Reduce(32)
+    (55, <dc>) -> Reduce(32)
+    (56, </dc>) -> Reduce(26)
+    (56, </hc>) -> Reduce(26)
+    (56, </label>) -> Reduce(26)
+    (56, <expression/>) -> Reduce(26)
+    (56, <label>) -> Reduce(26)
+    (56, <table>) -> Reduce(26)
+    (56, <text/>) -> Reduce(26)
+    (56, $) -> Reduce(26)
+    (57, </dr>) -> Reduce(13)
+    (57, <dc>) -> Reduce(13)
+    (58, </dc>) -> Reduce(7)
+    (58, </hc>) -> Reduce(7)
+    (58, </label>) -> Reduce(7)
+    (58, <expression/>) -> Reduce(7)
+    (58, <label>) -> Reduce(7)
+    (58, <table>) -> Reduce(7)
+    (58, <text/>) -> Reduce(7)
+    (58, $) -> Reduce(7)
+
+Goto
+    (0, NativeWidget) -> 5
+    (0, Screen) -> 6
+    (0, VirtualWidget) -> 7
+    (0, VirtualWidgets) -> 8
+    (2, NativeWidget) -> 5
+    (2, VirtualWidget) -> 7
+    (2, VirtualWidgets) -> 10
+    (7, NativeWidget) -> 5
+    (7, VirtualWidget) -> 7
+    (7, VirtualWidgets) -> 13
+    (11, NativeTableHeader) -> 17
+    (11, NativeTableHeaders) -> 18
+    (11, TableHeader) -> 19
+    (11, TableHeaders) -> 20
+    (16, LabelWidget) -> 24
+    (16, NativeWidget) -> 5
+    (16, VirtualWidget) -> 25
+    (17, NativeTableHeader) -> 17
+    (17, NativeTableHeaders) -> 27
+    (19, TableHeader) -> 19
+    (19, TableHeaders) -> 30
+    (22, NativeWidget) -> 5
+    (22, VirtualWidget) -> 7
+    (22, VirtualWidgets) -> 10
+    (26, NativeWidget) -> 5
+    (26, VirtualWidget) -> 25
+    (29, LabelWidget) -> 24
+    (35, NativeTableData) -> 41
+    (35, NativeTableDatas) -> 42
+    (38, TableData) -> 45
+    (38, TableDatas) -> 46
+    (40, NativeWidget) -> 5
+    (40, VirtualWidget) -> 47
+    (41, NativeTableData) -> 41
+    (41, NativeTableDatas) -> 48
+    (44, DataWidget) -> 52
+    (45, TableData) -> 45
+    (45, TableDatas) -> 53
+
+Rules
+    0: BigBang -> Screen
+    1: Screen -> VirtualWidgets
+    2: VirtualWidgets -> 
+    3: VirtualWidgets -> VirtualWidget VirtualWidgets
+    4: VirtualWidget -> <text/> <expression/>
+    5: VirtualWidget -> <label> <text/> </label> <expression/>
+    6: VirtualWidget -> NativeWidget
+    7: VirtualWidget -> <table> <hr> TableHeaders </hr> <dr> TableDatas </dr> </table>
+    8: TableHeaders -> 
+    9: TableHeaders -> TableHeader TableHeaders
+    10: TableHeader -> <hc> LabelWidget </hc>
+    11: TableDatas -> 
+    12: TableDatas -> TableData TableDatas
+    13: TableData -> <dc> DataWidget </dc>
+    14: LabelWidgets -> 
+    15: LabelWidgets -> LabelWidget LabelWidgets
+    16: LabelWidget -> <text/>
+    17: LabelWidget -> <label> <text/> </label>
+    18: DataWidgets -> 
+    19: DataWidgets -> DataWidget DataWidgets
+    20: DataWidget -> <expression/>
+    21: NativeWidgets -> 
+    22: NativeWidgets -> NativeWidget NativeWidgets
+    23: NativeWidget -> <text/>
+    24: NativeWidget -> <expression/>
+    25: NativeWidget -> <label> VirtualWidgets </label>
+    26: NativeWidget -> <table> <hr> NativeTableHeaders </hr> <dr> NativeTableDatas </dr> </table>
+    27: NativeTableHeaders -> 
+    28: NativeTableHeaders -> NativeTableHeader NativeTableHeaders
+    29: NativeTableHeader -> <hc> VirtualWidget </hc>
+    30: NativeTableDatas -> 
+    31: NativeTableDatas -> NativeTableData NativeTableDatas
+    32: NativeTableData -> <dc> VirtualWidget </dc>
+
+Conflicts
+    (4, <expression/>) -> Shift(12), Reduce(23)
+    (9, </label>) -> Shift(14), Reduce(23)
+    (9, <expression/>) -> Shift(12), Reduce(23)
+    (11, </hr>) -> Reduce(8), Reduce(27)
+    (23, <expression/>) -> Shift(12), Reduce(23)
+    (23, </hc>) -> Reduce(16), Reduce(23)
+    (23, <text/>) -> Reduce(16), Reduce(23)
+    (23, <label>) -> Reduce(16), Reduce(23)
+    (32, </label>) -> Shift(39), Reduce(23)
+    (32, <expression/>) -> Shift(12), Reduce(23)

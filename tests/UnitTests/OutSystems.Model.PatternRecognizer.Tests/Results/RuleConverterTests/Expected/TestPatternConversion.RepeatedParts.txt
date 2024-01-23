@@ -1,0 +1,6 @@
+[Text.1] VirtualWidget -> <ITextWidget> </ITextWidget>
+Rep_0 -> 
+Rep_0 -> ChildTrue=VirtualWidget Rep_0
+Rep_1 -> 
+Rep_1 -> ChildFalse=VirtualWidget Rep_1
+[If.1] VirtualWidget -> <IIfWidget> <TrueBranch> ChildTrue=Rep_0 </TrueBranch> <FalseBranch> ChildFalse=Rep_1 </FalseBranch> </IIfWidget>

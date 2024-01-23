@@ -1,0 +1,5 @@
+Expression.3
+    NativeWidgets: { <TextWidget Text=T3 />, <TextWidget Text=:  />, <ExpressionWidget Value=456 /> }
+    Captures:
+        w1 -> <TextWidget Text=T3 />
+        w2 -> <ExpressionWidget Value=456 />

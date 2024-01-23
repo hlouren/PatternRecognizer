@@ -1,0 +1,2 @@
+Texts.1
+    NativeWidgets: {  }

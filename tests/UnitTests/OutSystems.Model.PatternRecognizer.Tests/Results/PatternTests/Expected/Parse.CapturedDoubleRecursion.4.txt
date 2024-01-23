@@ -1,0 +1,34 @@
+Table.1
+    NativeWidgets: { <TableWidget> <HeaderRow> <HeaderCellWidget> <Content> <TextWidget Text=T_0 /> </Content> </HeaderCellWidget> <HeaderCellWidget> <Content> <TextWidget Text=T_1 /> </Content> </HeaderCellWidget> <HeaderCellWidget> <Content> <TextWidget Text=T_2 /> </Content> </HeaderCellWidget> </HeaderRow> <DataRow> <DataCellWidget> <Content> <ExpressionWidget Value=0 /> </Content> </DataCellWidget> <DataCellWidget> <Content> <ExpressionWidget Value=1 /> </Content> </DataCellWidget> <DataCellWidget> <Content> <ExpressionWidget Value=2 /> </Content> </DataCellWidget> </DataRow> </TableWidget> }
+    Captures:
+        w1 -> <TableWidget> <HeaderRow> <HeaderCellWidget> <Content> <TextWidget Text=T_0 /> </Content> </HeaderCellWidget> <HeaderCellWidget> <Content> <TextWidget Text=T_1 /> </Content> </HeaderCellWidget> <HeaderCellWidget> <Content> <TextWidget Text=T_2 /> </Content> </HeaderCellWidget> </HeaderRow> <DataRow> <DataCellWidget> <Content> <ExpressionWidget Value=0 /> </Content> </DataCellWidget> <DataCellWidget> <Content> <ExpressionWidget Value=1 /> </Content> </DataCellWidget> <DataCellWidget> <Content> <ExpressionWidget Value=2 /> </Content> </DataCellWidget> </DataRow> </TableWidget>
+        w2 -> <HeaderRow> <HeaderCellWidget> <Content> <TextWidget Text=T_0 /> </Content> </HeaderCellWidget> <HeaderCellWidget> <Content> <TextWidget Text=T_1 /> </Content> </HeaderCellWidget> <HeaderCellWidget> <Content> <TextWidget Text=T_2 /> </Content> </HeaderCellWidget> </HeaderRow>
+        w3 -> [ <HeaderCellWidget> <Content> <TextWidget Text=T_0 /> </Content> </HeaderCellWidget>, [ Text.1 ], <HeaderCellWidget> <Content> <TextWidget Text=T_1 /> </Content> </HeaderCellWidget>, [ Text.1 ], <HeaderCellWidget> <Content> <TextWidget Text=T_2 /> </Content> </HeaderCellWidget>, [ Text.1 ] ]
+        w4 -> [ <Content> <TextWidget Text=T_0 /> </Content>, [ Text.1 ], <Content> <TextWidget Text=T_1 /> </Content>, [ Text.1 ], <Content> <TextWidget Text=T_2 /> </Content>, [ Text.1 ] ]
+        CHeader -> [ [ Text.1 ], [ Text.1 ], [ Text.1 ] ]
+        w5 -> <DataRow> <DataCellWidget> <Content> <ExpressionWidget Value=0 /> </Content> </DataCellWidget> <DataCellWidget> <Content> <ExpressionWidget Value=1 /> </Content> </DataCellWidget> <DataCellWidget> <Content> <ExpressionWidget Value=2 /> </Content> </DataCellWidget> </DataRow>
+        w6 -> [ <DataCellWidget> <Content> <ExpressionWidget Value=0 /> </Content> </DataCellWidget>, [ Expr.1 ], <DataCellWidget> <Content> <ExpressionWidget Value=1 /> </Content> </DataCellWidget>, [ Expr.1 ], <DataCellWidget> <Content> <ExpressionWidget Value=2 /> </Content> </DataCellWidget>, [ Expr.1 ] ]
+        w7 -> [ <Content> <ExpressionWidget Value=0 /> </Content>, [ Expr.1 ], <Content> <ExpressionWidget Value=1 /> </Content>, [ Expr.1 ], <Content> <ExpressionWidget Value=2 /> </Content>, [ Expr.1 ] ]
+        CData -> [ [ Expr.1 ], [ Expr.1 ], [ Expr.1 ] ]
+    Children:
+        Group
+            NativeWidgets: {  }
+            Children:
+                Text.1
+                    NativeWidgets: { <TextWidget Text=T_0 /> }
+                Expr.1
+                    NativeWidgets: { <ExpressionWidget Value=0 /> }
+        Group
+            NativeWidgets: {  }
+            Children:
+                Text.1
+                    NativeWidgets: { <TextWidget Text=T_1 /> }
+                Expr.1
+                    NativeWidgets: { <ExpressionWidget Value=1 /> }
+        Group
+            NativeWidgets: {  }
+            Children:
+                Text.1
+                    NativeWidgets: { <TextWidget Text=T_2 /> }
+                Expr.1
+                    NativeWidgets: { <ExpressionWidget Value=2 /> }

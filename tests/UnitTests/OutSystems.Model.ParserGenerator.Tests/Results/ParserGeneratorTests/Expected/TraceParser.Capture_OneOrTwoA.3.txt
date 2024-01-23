@@ -1,0 +1,8 @@
+Testing "a b" -> Error
+------------------
+    
+    token=a stack=[ 0 ]
+    Action Shift(1)
+    
+    token=b stack=[ 0 a 1 ]
+    Unexpected token b

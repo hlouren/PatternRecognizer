@@ -1,0 +1,17 @@
+Testing "id[xpto]" -> OK
+------------------
+    
+    token=id stack=[ 0 ]
+    Action Shift(2)
+    
+    token=$ stack=[ 0 id 2 ]
+    Multiple actions found: Reduce(1), Reduce(2)
+    Action Reduce(1)
+    Reducing 1 symbols with rule S -> id[Token.Value = "xpto"]
+    
+    configurationCount=1 token=$ stack=[ 0 S 3 ]
+    Action Accept
+    
+    Parse result:
+    R.1
+        xpto

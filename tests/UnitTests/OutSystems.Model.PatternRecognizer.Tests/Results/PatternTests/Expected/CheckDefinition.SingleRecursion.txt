@@ -1,0 +1,7 @@
+Pattern Text.1 : VirtualWidget
+    ITextWidget
+
+Pattern List.1 : VirtualWidget
+    IListWidget
+    |   ListItem
+    |   |   Child=VirtualWidget*

@@ -1,0 +1,8 @@
+Testing "n n" -> Error
+------------------
+    
+    token=n stack=[ 0 ]
+    Action Shift(2)
+    
+    token=n stack=[ 0 n 2 ]
+    Unexpected token n

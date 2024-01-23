@@ -1,0 +1,45 @@
+Testing "<list> <text/> <expression/> </list>" -> OK
+------------------
+    
+    token=<list> stack=[ 0 ]
+    Action Shift(4)
+    
+    token=<text/> stack=[ 0 <list> 4 ]
+    Action Shift(12)
+    
+    token=<expression/> stack=[ 0 <list> 4 <text/> 12 ]
+    Multiple actions found: Shift(19), Reduce(11)
+    Action Shift(19)
+    
+    configurationCount=1 token=</list> stack=[ 0 <list> 4 <text/> 12 <expression/> 19 ]
+    Multiple actions found: Shift(23), Reduce(4)
+    Action Shift(23)
+    
+    configurationCount=2 token=$ stack=[ 0 <list> 4 <text/> 12 <expression/> 19 </list> 23 ]
+    Action Reduce(9)
+    Reducing 4 symbols with rule VirtualWidget -> <list> <text/> <expression/> </list>
+    
+    configurationCount=2 token=$ stack=[ 0 VirtualWidget 8 ]
+    Action Reduce(2)
+    Reducing 0 symbols with rule VirtualWidgets -> 
+    
+    configurationCount=2 token=$ stack=[ 0 VirtualWidget 8 VirtualWidgets 16 ]
+    Action Reduce(3)
+    Reducing 2 symbols with rule VirtualWidgets -> VirtualWidget VirtualWidgets
+    
+    configurationCount=2 token=$ stack=[ 0 VirtualWidgets 9 ]
+    Action Reduce(1)
+    Reducing 1 symbols with rule Screen -> VirtualWidgets
+    
+    configurationCount=2 token=$ stack=[ 0 Screen 7 ]
+    Action Accept
+    
+    Parse result:
+    Screen
+        VirtualWidgets
+            List.1
+                <list>
+                <text/>
+                <expression/>
+                </list>
+            VirtualWidgets

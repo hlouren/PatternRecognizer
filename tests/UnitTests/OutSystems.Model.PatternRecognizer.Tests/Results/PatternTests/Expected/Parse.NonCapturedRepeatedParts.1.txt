@@ -1,0 +1,2 @@
+If.1
+    NativeWidgets: { <IfWidget> <TrueBranch> <TextWidget Text=Text in true branch /> </TrueBranch> <FalseBranch> <TextWidget Text=Text #1 in false branch /> <TextWidget Text=Text #2 in false branch /> </FalseBranch> </IfWidget> }
