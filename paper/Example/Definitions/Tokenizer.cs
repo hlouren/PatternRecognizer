@@ -4,8 +4,7 @@ using System.Collections.Generic;
 
 namespace Example.Definitions;
 
-internal class Tokenizer : ITokenizer<ModelObject>
-{
+internal class Tokenizer : ITokenizer<ModelObject> {
 
     public static readonly Tokenizer Instance = new Tokenizer();
 

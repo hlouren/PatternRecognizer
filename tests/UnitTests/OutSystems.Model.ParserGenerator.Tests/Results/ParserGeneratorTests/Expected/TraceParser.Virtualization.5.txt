@@ -1,6 +1,9 @@
 Testing "<text/> <expression/> <text/> <input/>" -> OK
 ------------------
     
+    Starting parser on token sequence:
+    <text/> <expression/> <text/> <input/>
+    
     token=<text/> stack=[ 0 ]
     Action Shift(5)
     

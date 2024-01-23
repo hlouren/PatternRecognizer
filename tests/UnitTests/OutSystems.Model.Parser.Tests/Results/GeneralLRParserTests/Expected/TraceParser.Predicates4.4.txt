@@ -1,5 +1,8 @@
 Testing "abcd" -> Error
 ------------------
     
+    Starting parser on token sequence:
+    abcd
+    
     token=abcd stack=[ 0 ]
     Unexpected token abcd

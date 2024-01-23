@@ -1,6 +1,9 @@
 Testing "? s ( ? s )" -> Error
 ------------------
     
+    Starting parser on token sequence:
+    ? s ( ? s )
+    
     token=? stack=[ 0 ]
     Action Reduce(4)
     Reducing 0 symbols with rule Facts -> 

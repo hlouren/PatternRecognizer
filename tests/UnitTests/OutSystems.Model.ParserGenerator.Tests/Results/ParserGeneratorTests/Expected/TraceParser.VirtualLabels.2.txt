@@ -1,6 +1,9 @@
 Testing "<table> <hr> <hc> <expression/> </hc> </hr> <dr> <dc> <text/> </dc> </dr> </table>" -> OK
 ------------------
     
+    Starting parser on token sequence:
+    <table> <hr> <hc> <expression/> </hc> </hr> <dr> <dc> <text/> </dc> </dr> </table>
+    
     token=<table> stack=[ 0 ]
     Action Shift(3)
     

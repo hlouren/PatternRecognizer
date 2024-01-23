@@ -1,6 +1,9 @@
 Testing "id" -> OK
 ------------------
     
+    Starting parser on token sequence:
+    id
+    
     token=id stack=[ 0 ]
     Action Shift(3)
     

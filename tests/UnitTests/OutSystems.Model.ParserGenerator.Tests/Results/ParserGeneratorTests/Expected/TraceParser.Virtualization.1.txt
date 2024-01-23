@@ -1,6 +1,9 @@
 Testing "<text/>" -> OK
 ------------------
     
+    Starting parser on token sequence:
+    <text/>
+    
     token=<text/> stack=[ 0 ]
     Action Shift(5)
     

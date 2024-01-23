@@ -1,6 +1,9 @@
 Testing "a" -> OK
 ------------------
     
+    Starting parser on token sequence:
+    a
+    
     token=a stack=[ 0 ]
     Action Shift(1)
     

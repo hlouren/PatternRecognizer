@@ -1,6 +1,9 @@
 Testing "a b" -> Error
 ------------------
     
+    Starting parser on token sequence:
+    a b
+    
     token=a stack=[ 0 ]
     Action Reduce(2)
     Reducing 0 symbols with rule S -> 

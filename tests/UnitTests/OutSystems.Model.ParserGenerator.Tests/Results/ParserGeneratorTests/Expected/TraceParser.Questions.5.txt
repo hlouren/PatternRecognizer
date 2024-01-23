@@ -1,6 +1,9 @@
 Testing "( ! s ? s ) ! s ? s" -> OK
 ------------------
     
+    Starting parser on token sequence:
+    ( ! s ? s ) ! s ? s
+    
     token=( stack=[ 0 ]
     Action Shift(2)
     

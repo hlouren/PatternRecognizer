@@ -1,5 +1,8 @@
 Testing "" -> Error
 ------------------
     
+    Starting parser on token sequence:
+    
+    
     token=$ stack=[ 0 ]
     Unexpected token $

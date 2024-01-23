@@ -1,6 +1,9 @@
 Testing "<label> <text/> <text/> </label> <expression/>" -> OK
 ------------------
     
+    Starting parser on token sequence:
+    <label> <text/> <text/> </label> <expression/>
+    
     token=<label> stack=[ 0 ]
     Action Shift(3)
     

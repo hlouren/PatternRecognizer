@@ -1,6 +1,9 @@
 Testing "<list> </list>" -> OK
 ------------------
     
+    Starting parser on token sequence:
+    <list> </list>
+    
     token=<list> stack=[ 0 ]
     Action Shift(4)
     

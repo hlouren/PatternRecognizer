@@ -13,7 +13,7 @@ internal record VirtualWidgetPattern(int Id, PropertyBinding[] Bindings, Pattern
     public void Print(IndentedTextWriter writer) {
         writer.Indent++;
 
-        // not correct, but currently we've no examples with nonterminals
+        // not entirely correct, but currently we've no examples with nonterminals
         foreach (var item in Items.Cast<VirtualWidgetPatternItem>()) {
             item.Print(writer);
         }

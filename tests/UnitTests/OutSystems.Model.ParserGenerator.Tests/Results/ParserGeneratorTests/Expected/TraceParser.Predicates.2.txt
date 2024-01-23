@@ -1,6 +1,9 @@
 Testing "<b> <t/>[xpto] </b>" -> OK
 ------------------
     
+    Starting parser on token sequence:
+    <b> <t/> </b>
+    
     token=<b> stack=[ 0 ]
     Action Shift(1)
     

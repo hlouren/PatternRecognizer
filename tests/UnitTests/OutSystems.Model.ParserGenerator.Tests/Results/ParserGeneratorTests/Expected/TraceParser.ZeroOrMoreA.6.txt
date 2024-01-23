@@ -1,5 +1,8 @@
 Testing "b a" -> Error
 ------------------
     
+    Starting parser on token sequence:
+    b a
+    
     token=b stack=[ 0 ]
     Unexpected token b
