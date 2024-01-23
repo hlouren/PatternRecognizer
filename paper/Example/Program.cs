@@ -1,5 +1,6 @@
 ﻿using Example.Definitions;
 using Example.NativeMetamodel;
+using System;
 using System.CodeDom.Compiler;
 using System.IO;
 using System.Linq;
@@ -18,7 +19,11 @@ public partial class Program {
     private static void PrintModel(object model, string filename) {
         using var fileWriter = GetStreamWriter(filename);
         using var modelWriter = new IndentedTextWriter(fileWriter, "\t");
-        model.Print(modelWriter);
+        PrintModel(model, modelWriter);
+    }
+
+    private static void PrintModel(object model, IndentedTextWriter writer) {
+        model.Print(writer);
     }
 
     private static void PrintParser(Tracer parserTracer) {
@@ -109,5 +114,19 @@ public partial class Program {
             PrintModel(virtualForm, "virtual-model.xml");
         }
         writer.WriteLine();
+
+        // write also to the console
+
+        var consoleWriter = new IndentedTextWriter(Console.Out);
+        Console.WriteLine("-- Native model --");
+        PrintModel(form, consoleWriter);
+        Console.WriteLine();
+
+        if (virtualForm != null) {
+            Console.WriteLine("-- Virtualized model --");
+            PrintModel(virtualForm, consoleWriter);
+            Console.WriteLine();
+        }
+
     }
 }
