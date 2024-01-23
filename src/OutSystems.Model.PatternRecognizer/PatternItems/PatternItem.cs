@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace OutSystems.Model.PatternRecognizer.PatternItems;
 
-public abstract partial class PatternItem : IEquatable<PatternItem> {
+public abstract class PatternItem : IEquatable<PatternItem> {
 
     public string Id { get; }
     public Quantifier Quantifier { get; }
