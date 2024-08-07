@@ -69,7 +69,7 @@ public partial class GeneralLRParser<TTerminal, TResult, TContext> where TTermin
                     // if there are multiple actions then we must explore each of them. We'll explore the first
                     // action in the first place, and store the others in the configuration stack
                     var isFirstAction = true;
-                    foreach (var altAction in actions.Skip(1)) {
+                    foreach (var altAction in actions.Skip(1).Reverse()) {
                         if (isFirstAction) {
                             if (logger != null) {
                                 logger.WriteLine($"Multiple actions found: {string.Join(", ", actions)}");

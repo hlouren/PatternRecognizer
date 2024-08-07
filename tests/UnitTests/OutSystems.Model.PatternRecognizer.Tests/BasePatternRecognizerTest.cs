@@ -140,6 +140,43 @@ internal partial class BasePatternRecognizerTest {
                     ITextWidget*
                 """);
 
+
+            ///////////////////////////////////////////////////////////////////////////////////////
+            yield return new("RulesPriority", "Screen",
+                () => {
+                    var screens = new List<IScreen>();
+                    for (var i = 1; i <= 3; i++) {
+                        var screen = ModelFactory.CreateScreen();
+                        for (var j = 1; j <= i; j++) {
+                            var textWidget = screen.CreateWidget<ITextWidget>();
+                            textWidget.Text = $"Text #{j}";
+                        }
+                        screens.Add(screen);
+                    }
+                    return screens;
+                },
+                """
+                Pattern Screen! : Screen
+                    VirtualWidget*
+                
+                Pattern VirtualWidget.1! : VirtualWidget
+                    NativeWidget
+                                
+                Pattern Text.1 : VirtualWidget
+                    ITextWidget
+                
+                Pattern Expression.1 : VirtualWidget
+                    ITextWidget
+                    ITextWidget
+                    IExpressionWidget
+                                
+                Pattern Native.Text : NativeWidget
+                    ITextWidget                
+                """,
+                Handlers: null,
+                Conditions: null,
+                "Screen", "VirtualWidget", "NativeWidget");
+
             ///////////////////////////////////////////////////////////////////////////////////////
             yield return new("MultipleWidgets", "Screen",
                 () => {

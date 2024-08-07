@@ -1,0 +1,16 @@
+Pattern Screen! : Screen
+    VirtualWidget*
+
+Pattern VirtualWidget.1! : VirtualWidget
+    NativeWidget
+
+Pattern Text.1 : VirtualWidget
+    ITextWidget
+
+Pattern Expression.1 : VirtualWidget
+    ITextWidget
+    ITextWidget
+    IExpressionWidget
+
+Pattern Native.Text : NativeWidget
+    ITextWidget
